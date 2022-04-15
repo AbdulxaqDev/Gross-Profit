@@ -22,6 +22,20 @@ export default {};
       src="../assets/HomeIntroImg/lupa1.png"
       alt="You are welcome"
     />
+    <div class="smallCard" >
+      <img src="../assets/HomeIntroImg/farxod.png" alt="Фарход Исроилов">
+      <div>
+        <p class="smallCardName" >Фарход Исроилов</p>
+        <p>Налоговый консультант</p>
+      </div>
+    </div>
+    <div class="smallCard secondSmallCard" >
+      <img src="../assets/HomeIntroImg/farxod.png" alt="Фарход Исроилов">
+      <div>
+        <p class="smallCardName" >OOO “МЕЧТА”</p>
+        <p>Мне нужна ваша помощь</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -30,6 +44,8 @@ export default {};
     position: relative;
     height: 100%;
     width: 50%;
+    animation: fadeInRight;
+    animation-duration: 1s;
 }
 .blueBlock1 {
   background: linear-gradient(
@@ -50,7 +66,7 @@ export default {};
   position: absolute;
   width: 360.17px;
   height: 308.57px;
-  left: 212.96px;
+  left: 182.96px;
   top: 273.28px;
 
   background: linear-gradient(
@@ -66,23 +82,62 @@ export default {};
   position: absolute;
   width: 340px;
   height: 577px;
-  left: 200px;
+  left: 170px;
   top: 10px;
-
+  z-index: 5;
   background: url(image.png);
   border-radius: 0px;
 }
 .lupa {
   position: absolute;
-  left: 482px;
+  left: 452px;
   top: 144px;
   bottom: 93.99%;
+  z-index: 9;
 }
 .progress {
   position: absolute;
   width: 88px;
   height: 94px;
-  left: 522px;
+  left: 492px;
   top: 412px;
+}
+.smallCard{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 5px 0 5px;
+  border-left: #66B3DE 2px solid;
+  border-top: #66B3DE 2px solid;
+  width: 262px;
+  height: 90px;
+  position: absolute;
+  top: 30%;
+  left: 0%;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), linear-gradient(101.98deg, rgba(255, 255, 255, 0.12) 41.85%, rgba(255, 255, 255, 0) 144.37%);
+  backdrop-filter: blur(26px);
+  border-radius: 10px;
+  animation: pulse;
+  animation-delay: 1.5s;
+  animation-duration: 0.5s;
+}
+
+.smallCard p{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #3E3D3D;
+}
+
+.secondSmallCard{
+  top: 100%;
+  height: 70px;
+  left: -12%;
+  animation: pulse;
+  animation-delay: 2s;
+  animation-duration: 0.5s;
 }
 </style>

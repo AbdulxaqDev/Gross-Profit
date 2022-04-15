@@ -1,5 +1,6 @@
 <script>
 import HomeIntroImg from "./HomeIntroImg.vue";
+import 'animate.css';
 export default {
   components: {
     HomeIntroImg: HomeIntroImg,
@@ -42,6 +43,10 @@ export default {
   justify-content: space-evenly;
   align-items: flex-start;
   flex-direction: column;
+  margin-top: 100px;
+  background: linear-gradient(100.37deg, #fcfcfc 37.94%, #ffffff 100%);
+  animation: fadeInLeft;
+  animation-duration: 1s;
 }
 
 .home-intro-text h1 {

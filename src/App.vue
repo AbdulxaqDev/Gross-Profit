@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import 'animate.css';
 window.addEventListener("scroll", () => {
   let header = document.querySelector("header");
   header.classList.toggle("sticky", window.scrollY > 0);
@@ -130,6 +131,7 @@ window.addEventListener("scroll", () => {
   padding-top: 81px;
 }
 header {
+  z-index: 10;
   background: #fff;
   position: fixed;
   top: 0;
