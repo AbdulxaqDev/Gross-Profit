@@ -44,7 +44,6 @@ export default {
   align-items: flex-start;
   flex-direction: column;
   margin-top: 100px;
-  background: linear-gradient(100.37deg, #fcfcfc 37.94%, #ffffff 100%);
   animation: fadeInLeft;
   animation-duration: 1s;
 }

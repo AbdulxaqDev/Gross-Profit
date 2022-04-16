@@ -1,0 +1,48 @@
+<script>
+export default {
+    props: [
+        'title',
+        'description',
+        'imageUrl',
+    ]
+};
+</script>
+
+<template>
+    <div class="serviceCard">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+        <img :src="imageUrl" alt="Service">
+    </div>
+</template>
+
+<style scoped>
+.serviceCard {
+    background: #FFFFFF;
+    border-radius: 20px;
+    max-width: 605px;
+    width: 100%;
+    height: 334px;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 18px;
+    padding: 50px;
+}
+
+.serviceCard img {
+    position: absolute;
+    width: 140px;
+    height: 87px;
+    right: 22px;
+    bottom: 9px;
+}
+.serviceCard h3, p{
+    z-index: 2;
+}
+.serviceCard h3{
+    margin-bottom: 20px;
+}
+</style>

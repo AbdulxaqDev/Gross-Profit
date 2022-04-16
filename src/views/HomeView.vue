@@ -3,7 +3,8 @@ import HomeIntro from "../components/HomeIntro.vue";
 import HomeService from "../components/HomeService.vue";
 export default {
   components:{
-      'HomeIntro': HomeIntro
+      'HomeIntro': HomeIntro,
+      'HomeService': HomeService
   }
 };
 </script>

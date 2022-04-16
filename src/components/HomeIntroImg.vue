@@ -40,6 +40,21 @@ export default {};
 </template>
 
 <style scoped>
+@media(max-width: 1290px){
+  .homeIntroImg{
+    transform: scale(0.9);
+  }
+}
+@media(max-width: 1200px){
+  .homeIntroImg{
+    transform: scale(0.8);
+  }
+}
+@media(max-width: 1100px){
+  .homeIntroImg{
+    transform: scale(0.7);
+  }
+}
 .homeIntroImg{
     position: relative;
     height: 100%;
@@ -108,6 +123,7 @@ export default {};
   align-items: center;
   flex-direction: row;
   padding: 0 5px 0 5px;
+  border: #cecece 1px solid;
   border-left: #66B3DE 2px solid;
   border-top: #66B3DE 2px solid;
   width: 262px;
@@ -140,4 +156,5 @@ export default {};
   animation-delay: 2s;
   animation-duration: 0.5s;
 }
+
 </style>
