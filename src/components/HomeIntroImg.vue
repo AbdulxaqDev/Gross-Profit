@@ -7,32 +7,20 @@ export default {};
   <div class="homeIntroImg">
     <div class="blueBlock1"></div>
     <div class="blueBlock2"></div>
-    <img
-      class="introMan"
-      src="../assets/HomeIntroImg/Group338.png"
-      alt="You are welcome"
-    />
-    <img
-      class="progress"
-      src="../assets/HomeIntroImg/Group406.png"
-      alt="You are welcome"
-    />
-    <img
-      class="lupa"
-      src="../assets/HomeIntroImg/lupa1.png"
-      alt="You are welcome"
-    />
-    <div class="smallCard" >
+    <img class="introMan" src="../assets/HomeIntroImg/Group338.png" alt="You are welcome" />
+    <img class="progress" src="../assets/HomeIntroImg/Group406.png" alt="You are welcome" />
+    <img class="lupa" src="../assets/HomeIntroImg/lupa1.png" alt="You are welcome" />
+    <div class="smallCard">
       <img src="../assets/HomeIntroImg/farxod.png" alt="Фарход Исроилов">
       <div>
-        <p class="smallCardName" >Фарход Исроилов</p>
+        <p class="smallCardName">Фарход Исроилов</p>
         <p>Налоговый консультант</p>
       </div>
     </div>
-    <div class="smallCard secondSmallCard" >
+    <div class="smallCard secondSmallCard">
       <img src="../assets/HomeIntroImg/farxod.png" alt="Фарход Исроилов">
       <div>
-        <p class="smallCardName" >OOO “МЕЧТА”</p>
+        <p class="smallCardName">OOO “МЕЧТА”</p>
         <p>Мне нужна ваша помощь</p>
       </div>
     </div>
@@ -40,34 +28,18 @@ export default {};
 </template>
 
 <style scoped>
-@media(max-width: 1290px){
-  .homeIntroImg{
-    transform: scale(0.9);
-  }
+.homeIntroImg {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  animation: fadeInRight;
+  animation-duration: 1s;
 }
-@media(max-width: 1200px){
-  .homeIntroImg{
-    transform: scale(0.8);
-  }
-}
-@media(max-width: 1100px){
-  .homeIntroImg{
-    transform: scale(0.7);
-  }
-}
-.homeIntroImg{
-    position: relative;
-    height: 100%;
-    width: 50%;
-    animation: fadeInRight;
-    animation-duration: 1s;
-}
+
 .blueBlock1 {
-  background: linear-gradient(
-    128.96deg,
-    rgba(24, 32, 97, 0.85) 10.45%,
-    rgba(255, 255, 255, 0.25) 116.98%
-  );
+  background: linear-gradient(128.96deg,
+      rgba(24, 32, 97, 0.85) 10.45%,
+      rgba(255, 255, 255, 0.25) 116.98%);
   box-shadow: 0px 0px 50px rgba(237, 251, 255, 0.3);
   transform: skewY(-8.04deg);
   position: absolute;
@@ -84,15 +56,14 @@ export default {};
   left: 182.96px;
   top: 273.28px;
 
-  background: linear-gradient(
-    128.96deg,
-    rgba(24, 32, 97, 0.85) 10.45%,
-    rgba(255, 255, 255, 0.25) 116.98%
-  );
+  background: linear-gradient(128.96deg,
+      rgba(24, 32, 97, 0.85) 10.45%,
+      rgba(255, 255, 255, 0.25) 116.98%);
   box-shadow: 0px 0px 50px rgba(237, 251, 255, 0.3);
   transform: skewY(-8.04deg);
   border-radius: 0 0 30px 0;
 }
+
 .introMan {
   position: absolute;
   width: 340px;
@@ -103,6 +74,7 @@ export default {};
   background: url(image.png);
   border-radius: 0px;
 }
+
 .lupa {
   position: absolute;
   left: 452px;
@@ -110,6 +82,7 @@ export default {};
   bottom: 93.99%;
   z-index: 9;
 }
+
 .progress {
   position: absolute;
   width: 88px;
@@ -117,7 +90,8 @@ export default {};
   left: 492px;
   top: 412px;
 }
-.smallCard{
+
+.smallCard {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -139,7 +113,7 @@ export default {};
   animation-duration: 0.5s;
 }
 
-.smallCard p{
+.smallCard p {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
@@ -148,7 +122,7 @@ export default {};
   color: #3E3D3D;
 }
 
-.secondSmallCard{
+.secondSmallCard {
   top: 100%;
   height: 70px;
   left: -12%;
@@ -157,4 +131,27 @@ export default {};
   animation-duration: 0.5s;
 }
 
+@media(max-width: 1290px) {
+  .homeIntroImg {
+    transform: scale(0.9);
+  }
+}
+
+@media(max-width: 1220) {
+  .homeIntroImg {
+    transform: scale(0.7);
+  }
+}
+
+@media(max-width: 1220px) {
+  .homeIntroImg {
+    transform: scale(0.6);
+  }
+}
+
+@media(max-width: 970px) {
+  .homeIntroImg {
+    display: none;
+  }
+}
 </style>

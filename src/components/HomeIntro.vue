@@ -12,12 +12,12 @@ export default {
   <div class="home-intro">
     <div class="home-intro-text">
       <h1>
-        Надежная<br /><span class="yellow">БУХГАЛТЕРИЯ</span><br />для
+        Надежная <span class="yellow">БУХГАЛТЕРИЯ</span> для
         <span class="yellow">ВАШЕГО БИЗНЕСА</span>
       </h1>
       <p>
-        Вы занимаетесь бизнесом, мы занимаемся Вашей бухгалтерией.<br />Ваша
-        личная команда профессиональных бухгалтеров, которая всегда<br />под
+        Вы занимаетесь бизнесом, мы занимаемся Вашей бухгалтерией. Ваша
+        личная команда профессиональных бухгалтеров, которая всегда под
         рукой.
       </p>
       <a href=""><button>Оставить заявку</button></a>
@@ -34,6 +34,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  margin-bottom: 200px;
 }
 
 .home-intro-text {
@@ -57,12 +58,14 @@ export default {
   text-decoration: none;
   font-weight: 500;
 }
+
 .home-intro-text p {
   color: rgba(62, 61, 61, 1);
   font-weight: 400;
   line-height: 21px;
   font-size: 14px;
 }
+
 .home-intro-text button {
   background: rgba(244, 181, 4, 1);
   color: #fff;
@@ -84,10 +87,68 @@ export default {
   cursor: pointer;
   transition: 0.3s;
 }
+
 .home-intro-text a:hover button {
   color: rgba(244, 181, 4, 1);
 }
+
 .yellow {
   color: rgba(244, 181, 4, 1);
 }
+
+
+@media(max-width: 1290px) {
+  .home-intro-text {
+    transform: scale(0.9);
+  }
+}
+
+@media(max-width: 1220) {
+  .home-intro-text {
+    transform: scale(0.8);
+  }
+}
+
+@media(max-width: 900px) {
+
+  .home-intro {
+    width: 100vw;
+    height: 577px;
+    padding: 0 50px 100px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    margin: 0;
+  }
+}
+
+@media(max-width: 800px) {
+  .home-intro {
+    height: 577px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  .home-intro-text {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+
+  .home-intro-text p {
+    width: 300px;
+  }
+  .home-intro-text button {
+    margin-top: 20px;
+  }
+}
+
 </style>
