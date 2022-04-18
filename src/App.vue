@@ -112,7 +112,7 @@ export default{
 
 
 header {
-  z-index: 10;
+  z-index: 100;
   background: #fff;
   position: fixed;
   top: 0;

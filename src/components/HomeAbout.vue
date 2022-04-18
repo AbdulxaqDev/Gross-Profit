@@ -14,7 +14,8 @@ export default {
         <h1>О компании</h1>
         <div class="details">
             <HomeAboutImg />
-            <p class="about-text" >Компания “GrossProfit” была создана в 2008 году. В нашей команде собраны спесциалисты из разных областей
+            <p class="about-text">Компания “GrossProfit” была создана в 2008 году. В нашей команде собраны спесциалисты
+                из разных областей
                 имеющие опыт работы
                 более <b>17 лет.</b>
                 <br>
@@ -33,7 +34,7 @@ export default {
                     </div>
                     <div class="corner"></div>
                 </div>
-                <div style="margin-left: 120px;" class="years-card">
+                <div class="years-card">
                     <div class="text">
                         <h2>12</h2>
                         <p>доволних клиентов</p>
@@ -126,6 +127,10 @@ p.about-text {
     top: 0;
 }
 
+.years-card:nth-child(2) {
+    margin-left: 120px;
+}
+
 .text h2 {
     color: #182061;
 }
@@ -186,6 +191,32 @@ p.about-text {
 }
 
 
+@media(max-width: 1400px) {
+    p.about-text {
+        font-size: 15px;
+        width: 50%;
+    }
+
+    .details {
+        flex-wrap: wrap;
+    }
+
+    .years-cards {
+        margin-top: 100px;
+        flex-direction: row;
+    }
+
+    .years-card:nth-child(2) {
+        margin-left: 0;
+    }
+
+    .years-card {
+        margin: 30px;
+    }
+}
+
+@media(max-width: 1300px) {}
+
 @media(max-width: 1290px) {}
 
 @media(max-width: 1220) {}
@@ -193,4 +224,23 @@ p.about-text {
 @media(max-width: 900px) {}
 
 @media(max-width: 800px) {}
+
+@media(max-width: 750px) {
+
+    .years-cards {
+        flex-direction: column;
+    }
+
+    .years-card {
+        transform: scale(1.5);
+        margin-top: 100px;
+    }
+
+    p.about-text {
+        font-size: 15px;
+        max-width: 80%;
+    }
+
+}
+
 </style>

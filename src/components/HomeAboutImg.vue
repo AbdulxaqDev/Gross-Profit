@@ -24,7 +24,7 @@ export default {
     width: 479px;
     height: 420px;
     border-radius: 50px;
-    transform: matrix( 1, 0, 0, 1, 0, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
 }
 
 .corner-block {
@@ -55,6 +55,13 @@ export default {
 }
 
 
+@media(max-width: 1400px) {
+    .home-about-img {
+        transform: scale(0.8);
+        margin-right: 0;
+    }
+}
+
 @media(max-width: 1290px) {}
 
 @media(max-width: 1220) {}
@@ -62,4 +69,12 @@ export default {
 @media(max-width: 900px) {}
 
 @media(max-width: 800px) {}
+
+
+@media(max-width: 400px) {
+
+    .home-about-img {
+        transform: scale(0.7);
+    }
+}
 </style>
