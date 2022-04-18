@@ -105,7 +105,7 @@ export default{
 }
 
 .app {
-  height: 3000px;
+  height: 7000px;
   padding-top: 81px;
   background: linear-gradient(252.37deg, #F1F5F9 37.94%, #F4F7FA 100%);
 }
