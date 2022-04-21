@@ -1,6 +1,11 @@
 <script>
 import ServiceCard from "./ServiceCard.vue";
 import 'animate.css'
+import card1 from '../assets/HomeIntroImg/calc.png'
+import card2 from '../assets/HomeIntroImg/stamp.png'
+import card3 from '../assets/HomeIntroImg/files.png'
+import card4 from '../assets/HomeIntroImg/taxy.png'
+import card5 from '../assets/HomeIntroImg/scessor.png'
 
 
 window.addEventListener('scroll', () => {
@@ -23,31 +28,31 @@ export default {
       card1: {
         title: "Бухгалтерское сопровождение в Узбекистане",
         description: "Берём на себя всю бугалтерию! Ведем налоговый учет и готовим счета к оплате вовремя и без задержек.",
-        path: "../src/assets/HomeIntroImg/calc.png"
+        path: card1
 
       },
       card2: {
         title: "Регистрация компании в Республике Узбекистан",
         description: "Подготовим отчетность и оповестим вас o сроках. Вам остается только подписать отчёты.",
-        path: "../src/assets/HomeIntroImg/stamp.png"
+        path: card2
 
       },
       card3: {
         title: "Восстановление бухгалтерского учета в Узбекистане",
         description: "Подготовка документов и платежи контрагентам",
-        path: "../src/assets/HomeIntroImg/files.png"
+        path: card3
 
       },
       card4: {
         title: "Перерегистрация (Изменение)",
         description: "Контроль и управление всеми счетами",
-        path: "../src/assets/HomeIntroImg/taxy.png"
+        path: card4
 
       },
       card5: {
         title: "Ликвидация предприятия в Узбекистане",
         description: "Наши специалисты всегда готовыответить на возникшие y вас вопросы в чате или любом мессеннджере",
-        path: "../src/assets/HomeIntroImg/scessor.png"
+        path: card5
 
       },
     }

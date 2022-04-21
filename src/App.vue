@@ -1,5 +1,6 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
+import HomeView from "./views/HomeView.vue";
 import 'animate.css';
 window.addEventListener("scroll", () => {
   let header = document.querySelector("header");
@@ -7,6 +8,9 @@ window.addEventListener("scroll", () => {
 });
 
 export default{
+  components:{
+    'HomeView': HomeView
+  },
   data() {
     return {
       showNav: false
@@ -15,7 +19,6 @@ export default{
   methods: {
     showNavLinks(){
       this.showNav = !this.showNav
-      console.log(this.showNav);
     }
   },
 };
@@ -57,7 +60,7 @@ export default{
         </RouterLink>
         <ul :class="showNav? 'showNav' : ''">
           <li>
-            <RouterLink to="/">Главная</RouterLink>
+            <RouterLink to="/index.html">Главная</RouterLink>
           </li>
           <li>
             <RouterLink to="/about">О компании</RouterLink>
@@ -89,11 +92,9 @@ export default{
             </g>
           </svg>
         </div>
-
       </nav>
     </header>
     <RouterView />
-
   </div>
 </template>
 
@@ -378,6 +379,20 @@ ul li a:hover:after {
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
 
 

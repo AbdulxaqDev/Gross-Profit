@@ -56,7 +56,7 @@ export default {
 
 <style scoped>
 .home-about {
-    margin-top: 150px;
+    margin: 150px 0 170px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -227,6 +227,20 @@ p.about-text {
 
 @media(max-width: 750px) {
 
+    .home-about {
+        padding: 0 0;
+    }
+
+    p.about-text {
+        font-size: 15px;
+        width: 70%;
+    }
+
+    .details {
+        flex-direction: column;
+        padding: 0;
+    }
+
     .years-cards {
         flex-direction: column;
     }
@@ -241,6 +255,6 @@ p.about-text {
         max-width: 80%;
     }
 
-}
 
+}
 </style>
