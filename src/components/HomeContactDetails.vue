@@ -113,16 +113,38 @@ import 'animate.css';
 
 
 
-@media(max-width: 1670px) {
+@media(max-width: 1570px) {
+    .frame {
+        transform: scale(0.8);
+    }
+
+    .smallCard {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+        height: 100px;
+        background: #FFFFFF;
+        border-radius: 20px;
+        left: 50px;
+        top: 15px;
+    }
+
+}
+
+@media(max-width: 1360px) {
     .smallCards {
         flex-direction: column;
     }
+
+
 
     .frame {
         margin-top: 50px;
     }
 
-    .arrow{
+    .arrow {
         margin-top: 50px;
         transform: rotateZ(90deg);
     }

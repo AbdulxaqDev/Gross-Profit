@@ -1,4 +1,5 @@
 <script>
+
 import { RouterLink, RouterView } from "vue-router";
 import HomeView from "./views/HomeView.vue";
 import 'animate.css';
@@ -106,7 +107,6 @@ export default{
 }
 
 .app {
-  height: 7000px;
   padding-top: 81px;
   background: linear-gradient(252.37deg, #F1F5F9 37.94%, #F4F7FA 100%);
 }

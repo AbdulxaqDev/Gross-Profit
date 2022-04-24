@@ -5,6 +5,7 @@ import HomeAbout from "../components/HomeAbout.vue";
 import HomeStakeholders from "../components/HomeStakeholders.vue";
 import HomeContactDetails from "../components/HomeContactDetails.vue";
 import HomeFooter from "../components/HomeFooter.vue";
+import HomeBottom from "../components/HomeBottom.vue";
 
 export default {
   components:{
@@ -14,6 +15,7 @@ export default {
       'HomeStakeholders': HomeStakeholders,
       'HomeContactDetails': HomeContactDetails,
       'HomeFooter': HomeFooter,
+      'HomeBottom': HomeBottom,
 
   }
 };
@@ -27,6 +29,7 @@ export default {
     <HomeStakeholders/>
     <HomeContactDetails/>
     <HomeFooter/>
+    <HomeBottom/>
   </div>
 </template>
 
