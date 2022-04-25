@@ -6,6 +6,8 @@ import HomeStakeholders from "../components/HomeStakeholders.vue";
 import HomeContactDetails from "../components/HomeContactDetails.vue";
 import HomeFooter from "../components/HomeFooter.vue";
 import HomeBottom from "../components/HomeBottom.vue";
+import Form from "../components/Form.vue";
+
 
 export default {
   components:{
@@ -16,6 +18,7 @@ export default {
       'HomeContactDetails': HomeContactDetails,
       'HomeFooter': HomeFooter,
       'HomeBottom': HomeBottom,
+      'Form': Form,
 
   }
 };
@@ -30,6 +33,8 @@ export default {
     <HomeContactDetails/>
     <HomeFooter/>
     <HomeBottom/>
+    <Form/>
+
   </div>
 </template>
 

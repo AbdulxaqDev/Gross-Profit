@@ -1,5 +1,5 @@
 <script>
-
+import { showForm } from './stores/store'
 import { RouterLink, RouterView } from "vue-router";
 import HomeView from "./views/HomeView.vue";
 import 'animate.css';
@@ -14,12 +14,16 @@ export default{
   },
   data() {
     return {
-      showNav: false
+      showNav: false,
+      showForm
     }
   },
   methods: {
     showNavLinks(){
       this.showNav = !this.showNav
+    },
+    showBotForm(){
+      this.showForm.isVisible = !this.showForm.isVisible 
     }
   },
 };
@@ -72,7 +76,7 @@ export default{
         </ul>
         <div class="phoneNumber" :class="showNav? 'showNav2' : ''">
           <p>(998) 99 218-55-88</p>
-          <a href=""><button>Заказать<br />звонок</button></a>
+          <button @click="showBotForm" >Заказать<br />звонок</button>
         </div>
 
         <div class="icons" @click="showNavLinks" >
@@ -215,13 +219,10 @@ ul li a:hover:after {
   color: rgba(24, 32, 97, 1);
 }
 
-.phoneNumber a {
-  text-decoration: none;
-  font-weight: 500;
-}
 
 .phoneNumber button {
   color: rgba(24, 32, 97, 1);
+  font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -239,11 +240,9 @@ ul li a:hover:after {
   background: rgba(24, 32, 97, 1);
   cursor: pointer;
   transition: 0.3s;
-}
-
-.phoneNumber a:hover button {
   color: #fff;
 }
+
 
 /* Burger ******************************************************* */
 .icons {

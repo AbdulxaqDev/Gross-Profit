@@ -37,7 +37,7 @@ onMounted(() => {
             <h4>(998) 99 218-55-88</h4>
         </div>
         <div class="map-form">
-            <div id="map" class="map">Hello</div>
+            <div id="map" class="map"></div>
             <div class="message">
                 <div class="img-form">
                     <img src="../assets/HomeIntroImg/girlOnCall.png" alt="">
