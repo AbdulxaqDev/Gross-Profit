@@ -68,7 +68,7 @@ export default{
             <RouterLink to="/index.html">Главная</RouterLink>
           </li>
           <li>
-            <RouterLink to="/about">О компании</RouterLink>
+            <RouterLink to="/about">О нас</RouterLink>
           </li>
           <li>
             <RouterLink to="/service">Услуги</RouterLink>

@@ -1,7 +1,6 @@
 <script>
 
 import { showForm } from '../stores/store'
-import { onBeforeMount, onMounted } from "vue";
 
 
 
@@ -33,17 +32,67 @@ export default {
             document.getElementById('name').value = '';
             document.getElementById('phoneNumber').value = '';
             document.getElementById('description').value = '';
-            this.showForm.isVisible = !this.showForm.isVisible
         }
     },
     computed: {
+
     },
     mounted() {
-        // this.sendMessage();
-        const form = document.getElementById('form')
-        form.addEventListener('submit', this.sendMessage())
+        // // this.sendMessage();
+        // const form = document.getElementById('form')
+        // form.addEventListener('submit', this.sendMessage)
     }
 }
+
+
+// onMounted(() => {
+
+//     const sendMessage = () => {
+
+//         let name = document.getElementById('name').value;
+//         let phoneNumber = document.getElementById('phoneNumber').value;
+//         let description = document.getElementById('description').value;
+//         let my_text = `Имя:  ${name}%0AТелефонный номер:  ${phoneNumber}%0AДополнительная информация:  ${description}`
+
+//         const token = '5398248085:AAHtX4fgYmWfVzDbe4GjVxWMmXiGK0ZTOys';
+//         const chat_id = -633562777
+//         const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`
+//         let api = new XMLHttpRequest();
+//         api.open('GET', url, true);
+//         api.send();
+//         this.cleanMessage()
+//     }
+
+//     const cleanMessage = () => {
+//         document.getElementById('name').value = '';
+//         document.getElementById('phoneNumber').value = '';
+//         document.getElementById('description').value = '';
+//     }
+
+
+
+//     const form = document.getElementById('form')
+//     form.addEventListener('submit', () => {
+
+//         let email = document.getElementById('email').value;
+//         let my_text = `Email:  ${email}`
+
+//         const token = '5398248085:AAHtX4fgYmWfVzDbe4GjVxWMmXiGK0ZTOys';
+//         const chat_id = -633562777
+//         const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`
+//         let api = new XMLHttpRequest();
+//         api.open('GET', url, true);
+//         api.send();
+//         cleanMessage();
+//     })
+
+
+
+
+
+// })
+
+
 
 
 
@@ -51,7 +100,7 @@ export default {
 </script>
 
 <template>
-    <form id="form" @submit.prevent="" class="bot-form" :class="showForm.isVisible ? '' : 'hideForm'">
+    <form @submit.prevent="" class="bot-form" :class="showForm.isVisible ? '' : 'hideForm'">
         <h1>Заказать звонок</h1>
         <p>Ваше имя <span class="yellow">*</span></p>
         <input type="text" id="name">
@@ -82,6 +131,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     position: fixed;
+    max-width: 600px;
     width: 90vw;
     background: #FFFFFF;
     box-shadow: 1px 1px 30px #828282;

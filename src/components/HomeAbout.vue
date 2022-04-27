@@ -11,7 +11,7 @@ export default {
 
 <template>
     <div class="home-about">
-        <h1>О компании</h1>
+        <h1>О нас</h1>
         <div class="details">
             <HomeAboutImg />
             <p class="about-text">Компания “GrossProfit” была создана в 2008 году. В нашей команде собраны спесциалисты

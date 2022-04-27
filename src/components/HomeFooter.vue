@@ -2,6 +2,7 @@
 
 import mapboxgl from "mapbox-gl";
 import { onBeforeMount, onMounted } from "vue";
+import { showForm } from '../stores/store'
 
 
 onMounted(() => {
@@ -15,6 +16,31 @@ onMounted(() => {
     });
 
     new mapboxgl.Marker().setLngLat(lonLat).addTo(map);
+
+    const cleanMessage = ()=>{
+        document.getElementById('email').value = '';
+    }
+
+
+
+    const form = document.getElementById('form')
+    form.addEventListener('submit', ()=>{
+
+        let email = document.getElementById('email').value;
+        let my_text = `Email:  ${email}`
+    
+        const token = '5398248085:AAHtX4fgYmWfVzDbe4GjVxWMmXiGK0ZTOys';
+        const chat_id = -633562777
+        const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`
+        let api = new XMLHttpRequest();
+        api.open('GET', url, true);
+        api.send();
+        cleanMessage();
+    })
+
+
+
+
 
 })
 
@@ -46,9 +72,9 @@ onMounted(() => {
                         <p>Задайте их менежеру!</p>
                     </div>
                 </div>
-                <form action="">
-                    <input type="text" name="" id="" placeholder="E-mail">
-                    <input type="submit" value="Получить консультацию">
+                <form id="form" action=""  @submit.prevent="">
+                    <input type="text" id="email" placeholder="E-mail">
+                    <input  type="submit"  value="Получить консультацию">
                 </form>
                 <p>
                     Нажмимая кнопку “Отправит” вы соглашетесь
@@ -199,7 +225,7 @@ form input[type=submit]:hover {
     border: #F4B504 1px solid;
 }
 
-.yellow{
+.yellow {
     color: #F4B504;
 }
 

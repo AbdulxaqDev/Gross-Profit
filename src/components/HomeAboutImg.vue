@@ -1,12 +1,29 @@
-<script>
+<script setup>
 import 'animate.css';
-export default {
 
-};
+import { onMounted } from 'vue';
+
+
+onMounted(() => {
+    document.addEventListener('scroll', () => {
+        const box = document.getElementById('box');
+        const rect = box.getBoundingClientRect();
+
+        const isInViewport = rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+
+        console.log(isInViewport);
+    })
+})
+
+
+
 </script>
 
 <template>
-    <div class="home-about-img">
+    <div class="home-about-img" id="box" :class="isInViewport? 'showImg':''" >
         <div class="corner-block"></div>
         <img src="../assets/HomeIntroImg/aboutImg.png" alt="">
         <div class="corner-block2"></div>
@@ -18,6 +35,11 @@ export default {
     position: relative;
     /* transform: scale(0.8); */
     margin-right: 50px;
+}
+
+.showImg {
+    animation: fadeInLeft;
+    animation-duration: 1s;
 }
 
 .home-about-img img {

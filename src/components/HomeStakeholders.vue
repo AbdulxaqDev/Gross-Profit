@@ -27,9 +27,17 @@ export default {};
         </div>
         <div class="stakeHolders">
             <h1>Нам доверяет </h1>
-            <h6>Logolo</h6>
-            <h6>Logolo</h6>
-            <h6>Logolo</h6>
+            <h6>
+                <img src="../assets/HomeIntroImg/mountain.png" alt="">
+                <img src="../assets/HomeIntroImg/train.png" alt="">
+            </h6>
+            <h6>
+                <img src="../assets/HomeIntroImg/team.png" alt="">
+                <img src="../assets/HomeIntroImg/vestco.png" alt="">
+            </h6>
+            <h6>
+                <img src="../assets/HomeIntroImg/plant.png" alt="">
+            </h6>
         </div>
     </div>
 </template>
@@ -38,19 +46,18 @@ export default {};
 .home-stake-holders {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
     padding: 0 100px 100px;
 }
 
 
 .stake-holders-text {
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    max-height: 100%;
-    height: 100%;
     width: 45%;
 }
 
@@ -65,6 +72,10 @@ export default {};
 .stakeHolders h6 {
     font-size: 50px;
     margin: 30px 0;
+}
+
+.stakeHolders  img{
+    margin: 0 30px;
 }
 
 .home-stake-holders h1 {
@@ -101,7 +112,7 @@ export default {};
     text-align: center;
     letter-spacing: 0.05em;
     color: #3E3D3D;
-    margin: 40px 0;
+    margin: 80px 0;
 }
 
 .yellow {
@@ -114,6 +125,7 @@ export default {};
     align-items: center;
     flex-direction: row;
     width: 100%;
+    margin: 40px 0;
 }
 
 .smallCard {
@@ -156,6 +168,7 @@ export default {};
 @media(max-width: 1360px) {
     .home-stake-holders {
         flex-direction: column;
+        align-items: center;
     }
 
     .stakeHolders {
