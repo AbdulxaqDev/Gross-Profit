@@ -5,8 +5,15 @@ export default {
     components: {
         'HomeAboutImg': HomeAboutImg
     }
-
 };
+
+window.addEventListener('scroll', () => {
+    const aboutImg = document.getElementById('abourText');
+    if (window.scrollY > 1500) {
+        aboutImg.classList.add('showText')
+    }
+    console.log(window.scrollY);
+})
 </script>
 
 <template>
@@ -14,7 +21,8 @@ export default {
         <h1>О нас</h1>
         <div class="details">
             <HomeAboutImg />
-            <p class="about-text">Компания “GrossProfit” была создана в 2008 году. В нашей команде собраны спесциалисты
+            <p id="abourText" class="about-text">Компания “GrossProfit” была создана в 2008 году. В нашей команде
+                собраны спесциалисты
                 из разных областей
                 имеющие опыт работы
                 более <b>17 лет.</b>
@@ -84,7 +92,7 @@ export default {
     flex-direction: row;
 }
 
-p.about-text {
+.about-text {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -93,6 +101,13 @@ p.about-text {
     text-align: justify;
     letter-spacing: 0.03em;
     width: 33%;
+    visibility: hidden;
+}
+
+.showText {
+    animation: fadeInUp;
+    animation-duration: 1s;
+    visibility: visible;
 }
 
 .years-cards {

@@ -3,6 +3,7 @@ import { showForm } from './stores/store'
 import { RouterLink, RouterView } from "vue-router";
 import HomeView from "./views/HomeView.vue";
 import 'animate.css';
+
 window.addEventListener("scroll", () => {
   let header = document.querySelector("header");
   header.classList.toggle("sticky", window.scrollY > 0);

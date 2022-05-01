@@ -1,29 +1,17 @@
-<script setup>
+<script>
 import 'animate.css';
 
-import { onMounted } from 'vue';
-
-
-onMounted(() => {
-    document.addEventListener('scroll', () => {
-        const box = document.getElementById('box');
-        const rect = box.getBoundingClientRect();
-
-        const isInViewport = rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-
-        console.log(isInViewport);
-    })
+window.addEventListener('scroll', () => {
+  const aboutImg = document.getElementById('box')
+  if (window.scrollY > 1500) {
+    aboutImg.classList.add('showImg')
+  }
 })
-
-
 
 </script>
 
 <template>
-    <div class="home-about-img" id="box" :class="isInViewport? 'showImg':''" >
+    <div class="home-about-img" id="box" :class="showAboutImg ? 'showImg' : ''">
         <div class="corner-block"></div>
         <img src="../assets/HomeIntroImg/aboutImg.png" alt="">
         <div class="corner-block2"></div>
@@ -35,11 +23,14 @@ onMounted(() => {
     position: relative;
     /* transform: scale(0.8); */
     margin-right: 50px;
+    transition: 0.5s;
+    visibility: hidden;
 }
 
 .showImg {
     animation: fadeInLeft;
     animation-duration: 1s;
+    visibility: visible;
 }
 
 .home-about-img img {
@@ -81,6 +72,7 @@ onMounted(() => {
     .home-about-img {
         transform: scale(0.8);
         margin-right: 0;
+        transition: 0.5s;
     }
 }
 
@@ -97,6 +89,7 @@ onMounted(() => {
 
     .home-about-img {
         transform: scale(0.7);
+        transition: 0.5s;
     }
 }
 </style>

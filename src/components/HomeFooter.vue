@@ -73,6 +73,10 @@ onMounted(() => {
                     </div>
                 </div>
                 <form id="form" action=""  @submit.prevent="">
+                    <div class="cover" >
+                        <img src="../assets/HomeIntroImg/cover.png" alt="">
+                        <h2>Мы свяжемся с вами!</h2>
+                    </div>
                     <input type="text" id="email" placeholder="E-mail">
                     <input  type="submit"  value="Получить консультацию">
                 </form>
@@ -181,11 +185,21 @@ onMounted(() => {
     margin-left: 20px;
 }
 
-.message form {
+.message form, .cover {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+form{
+    position: relative;
 }
 
 form input {

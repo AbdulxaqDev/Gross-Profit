@@ -12,10 +12,10 @@ window.addEventListener('scroll', () => {
   const cardGroupOne = document.getElementById('groupOne')
   const cardGroupTwo = document.getElementById('groupTwo')
   if (window.scrollY > 260) {
-    cardGroupOne.classList.add('cardGroupOne')
+    cardGroupOne.classList.add('showCards')
   }
   if (window.scrollY > 530) {
-    cardGroupTwo.classList.add('cardGroupOne')
+    cardGroupTwo.classList.add('showCards')
   }
 })
 
@@ -65,13 +65,13 @@ export default {
     <h1>НАШИ УСЛУГИ</h1>
     <div class="cards" id="groupOne">
       <ServiceCard
-        class="cardGroupOne"
+        class="showCards"
         :title="card1.title" 
         :description="card1.description" 
         :imageUrl="card1.path" 
       />
       <ServiceCard 
-        class="cardGroupOne"
+        class="showCards"
         :title="card2.title" 
         :description="card2.description" 
         :imageUrl="card2.path" 
@@ -79,16 +79,19 @@ export default {
     </div>
     <div class="cards" id="groupTwo">
       <ServiceCard 
+       class="showCards"
         :title="card3.title" 
         :description="card3.description" 
         :imageUrl="card3.path" 
       />
       <ServiceCard 
+        class="showCards"
         :title="card4.title" 
         :description="card4.description" 
         :imageUrl="card4.path" 
       />
       <ServiceCard 
+       class="showCards"
         :title="card5.title" 
         :description="card5.description" 
         :imageUrl="card5.path" 
@@ -124,12 +127,14 @@ export default {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  visibility: hidden;
 }
 
-.cardGroupOne{
+.showCards{
     animation: fadeInUp;
     animation-duration: 1s;
     opacity: 1;
+    visibility: visible;
 }
 .homeService a {
   text-decoration: none;
