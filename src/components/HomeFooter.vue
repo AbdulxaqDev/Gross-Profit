@@ -1,48 +1,53 @@
-<script setup>
+<script>
 
 import mapboxgl from "mapbox-gl";
 import { onBeforeMount, onMounted } from "vue";
 import { showForm } from '../stores/store'
 
 
-onMounted(() => {
-    const lonLat = [69.340188, 41.348679]
-    const mapE = document.getElementById('map').value
-    const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: lonLat, // starting position [lng, lat]
-        zoom: 16 // starting zoom
-    });
+export default {
+    data(){
+        return{
+            showMessageCover: false,
+        }
+    },
+    mounted() {
+        // onMounted(() => {
+            const lonLat = [69.340188, 41.348679]
+            const mapE = document.getElementById('map').value
+            const map = new mapboxgl.Map({
+                container: 'map', // container ID
+                style: 'mapbox://styles/mapbox/streets-v11', // style URL
+                center: lonLat, // starting position [lng, lat]
+                zoom: 16 // starting zoom
+            });
 
-    new mapboxgl.Marker().setLngLat(lonLat).addTo(map);
+            new mapboxgl.Marker().setLngLat(lonLat).addTo(map);
 
-    const cleanMessage = ()=>{
-        document.getElementById('email').value = '';
-    }
-
-
-
-    const form = document.getElementById('form')
-    form.addEventListener('submit', ()=>{
-
-        let email = document.getElementById('email').value;
-        let my_text = `Email:  ${email}`
-    
-        const token = '5398248085:AAHtX4fgYmWfVzDbe4GjVxWMmXiGK0ZTOys';
-        const chat_id = -633562777
-        const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`
-        let api = new XMLHttpRequest();
-        api.open('GET', url, true);
-        api.send();
-        cleanMessage();
-    })
+            const cleanMessage = () => {
+                document.getElementById('email').value = '';
+            }
 
 
 
+            const form = document.getElementById('form')
+            form.addEventListener('submit', () => {
 
+                let email = document.getElementById('email').value;
+                let my_text = `Email:  ${email}`
 
-})
+                const token = '5398248085:AAHtX4fgYmWfVzDbe4GjVxWMmXiGK0ZTOys';
+                const chat_id = -633562777
+                const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`
+                let api = new XMLHttpRequest();
+                api.open('GET', url, true);
+                api.send();
+                cleanMessage();
+                this.showMessageCover = !this.showMessageCover;
+            })
+        // })
+    },
+}
 
 </script>
 
@@ -72,13 +77,13 @@ onMounted(() => {
                         <p>Задайте их менежеру!</p>
                     </div>
                 </div>
-                <form id="form" action=""  @submit.prevent="">
-                    <div class="cover" >
+                <form id="form" action="" @submit.prevent="">
+                    <div class="cover" :class="showMessageCover ? 'showMessageCover' : ''">
                         <img src="../assets/HomeIntroImg/cover.png" alt="">
                         <h2>Мы свяжемся с вами!</h2>
                     </div>
                     <input type="text" id="email" placeholder="E-mail">
-                    <input  type="submit"  value="Получить консультацию">
+                    <input type="submit" value="Получить консультацию">
                 </form>
                 <p>
                     Нажмимая кнопку “Отправит” вы соглашетесь
@@ -163,6 +168,7 @@ onMounted(() => {
 }
 
 .message {
+    position: relative;
     margin-left: -66px;
     display: flex;
     justify-content: center;
@@ -185,7 +191,8 @@ onMounted(() => {
     margin-left: 20px;
 }
 
-.message form, .cover {
+.message form,
+.cover {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -194,13 +201,20 @@ onMounted(() => {
 
 .cover {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     left: 0;
     top: 0;
+    background: #F4F7FA;
+    border-radius: 50px 5px;
+    width: 473px;
+    height: 420px;
+    z-index: 2;
+    display: none;
 }
 
-form{
-    position: relative;
-}
 
 form input {
     margin-top: 25px;
@@ -243,6 +257,26 @@ form input[type=submit]:hover {
     color: #F4B504;
 }
 
+.cover img {
+    margin: 0;
+    border: #182061 1px;
+    width: 400px;
+    margin-top: -50px;
+}
+
+.cover h2 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    color: #F4B504;
+    margin-top: -50px;
+}
+
+.showMessageCover {
+    display: unset;
+}
 
 @media(max-width: 1670px) {}
 
