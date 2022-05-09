@@ -6,18 +6,9 @@ import card2 from '../assets/HomeIntroImg/stamp.png'
 import card3 from '../assets/HomeIntroImg/files.png'
 import card4 from '../assets/HomeIntroImg/taxy.png'
 import card5 from '../assets/HomeIntroImg/scessor.png'
+import { showForm } from "../stores/store";
 
 
-window.addEventListener('scroll', () => {
-  const cardGroupOne = document.getElementById('groupOne')
-  const cardGroupTwo = document.getElementById('groupTwo')
-  if (window.scrollY > 260) {
-    cardGroupOne.classList.add('showCards')
-  }
-  if (window.scrollY > 530) {
-    cardGroupTwo.classList.add('showCards')
-  }
-})
 
 export default {
   components: {
@@ -55,7 +46,28 @@ export default {
         path: card5
 
       },
+    showForm
     }
+  },
+  methods: {
+    showBotForm() {
+      this.showForm.isVisible = !this.showForm.isVisible
+    },
+  },
+  created() {
+    window.addEventListener('scroll', (e) => {
+      if (window.scrollY > 260) {
+        document.getElementById('groupOne').classList.add('showCards')
+      }
+      if (window.scrollY > 530) {
+        document.getElementById('groupTwo').classList.add('showCards')
+      }
+    })
+  },
+  unmounted() {
+    window.removeEventListener('scroll', (e) => {
+      e.removeEventListener();
+    })
   },
 };
 </script>
@@ -64,40 +76,15 @@ export default {
   <div class="homeService">
     <h1>НАШИ УСЛУГИ</h1>
     <div class="cards" id="groupOne">
-      <ServiceCard
-        class="showCards"
-        :title="card1.title" 
-        :description="card1.description" 
-        :imageUrl="card1.path" 
-      />
-      <ServiceCard 
-        class="showCards"
-        :title="card2.title" 
-        :description="card2.description" 
-        :imageUrl="card2.path" 
-      />
+      <ServiceCard class="" :title="card1.title" :description="card1.description" :imageUrl="card1.path" />
+      <ServiceCard class="" :title="card2.title" :description="card2.description" :imageUrl="card2.path" />
     </div>
     <div class="cards" id="groupTwo">
-      <ServiceCard 
-       class="showCards"
-        :title="card3.title" 
-        :description="card3.description" 
-        :imageUrl="card3.path" 
-      />
-      <ServiceCard 
-        class="showCards"
-        :title="card4.title" 
-        :description="card4.description" 
-        :imageUrl="card4.path" 
-      />
-      <ServiceCard 
-       class="showCards"
-        :title="card5.title" 
-        :description="card5.description" 
-        :imageUrl="card5.path" 
-      />
+      <ServiceCard class="" :title="card3.title" :description="card3.description" :imageUrl="card3.path" />
+      <ServiceCard class="" :title="card4.title" :description="card4.description" :imageUrl="card4.path" />
+      <ServiceCard class="" :title="card5.title" :description="card5.description" :imageUrl="card5.path" />
     </div>
-    <a href=""><button>Оставить заявку</button></a>
+    <a href="#" @click="showBotForm"><button>Оставить заявку</button></a>
   </div>
 </template>
 
@@ -123,19 +110,20 @@ export default {
   margin-bottom: 70px;
 }
 
-.homeService .cards {
+.cards {
   width: 100%;
   display: flex;
   justify-content: space-between;
   visibility: hidden;
 }
 
-.showCards{
-    animation: fadeInUp;
-    animation-duration: 1s;
-    opacity: 1;
-    visibility: visible;
+.showCards {
+  animation: fadeInUp;
+  animation-duration: 1s;
+  opacity: 1;
+  visibility: visible;
 }
+
 .homeService a {
   text-decoration: none;
   font-weight: 500;
@@ -144,8 +132,8 @@ export default {
 
 
 .homeService button {
-  background: #182061;
-  color: #fff;
+  background: #fff;
+  color: #182061;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,40 +148,42 @@ export default {
 }
 
 .homeService button:hover {
-  background: #fff;
+  background: #182061;
+  color: #fff;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .homeService a:hover button {
-  color: #182061;
+  color: #fff;
 }
 
-@media (max-width: 1400px) {
-  #groupTwo{
+@media (max-width: 1300px) {
+  #groupTwo {
     flex-wrap: wrap;
   }
-  #groupTwo .serviceCard{
+
+  #groupTwo .serviceCard {
     width: 46%;
   }
-  
+
 }
 
 @media (max-width: 1140px) {
-  #groupTwo .serviceCard{
+  #groupTwo .serviceCard {
     width: 100%;
   }
-  
+
 }
 
 @media (max-width: 990px) {
-  #groupOne{
+  #groupOne {
     flex-wrap: wrap;
   }
 }
 
 @media (max-width: 900px) {
-  .homeService{
+  .homeService {
     padding: 0;
   }
 }

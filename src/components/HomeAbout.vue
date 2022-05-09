@@ -12,7 +12,6 @@ window.addEventListener('scroll', () => {
     if (window.scrollY > 1500) {
         aboutImg.classList.add('showText')
     }
-    console.log(window.scrollY);
 })
 </script>
 
@@ -58,7 +57,7 @@ window.addEventListener('scroll', () => {
                 </div>
             </div>
         </div>
-        <a href=""><button>Подробнее</button></a>
+        <RouterLink to="/about"><button> Подробнее</button></RouterLink>
     </div>
 </template>
 
@@ -180,8 +179,8 @@ window.addEventListener('scroll', () => {
 
 
 .home-about button {
-    background: #182061;
-    color: #fff;
+    background: #fff;
+    color: #182061;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -196,17 +195,17 @@ window.addEventListener('scroll', () => {
 }
 
 .home-about button:hover {
-    background: #fff;
+    background: #182061;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .home-about a:hover button {
-    color: #182061;
+    color: #fff;
 }
 
 
-@media(max-width: 1400px) {
+@media(max-width: 1300px) {
     p.about-text {
         font-size: 15px;
         width: 50%;

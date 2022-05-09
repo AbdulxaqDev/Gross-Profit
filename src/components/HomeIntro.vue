@@ -1,15 +1,21 @@
 <script>
 import HomeIntroImg from "./HomeIntroImg.vue";
+import { showForm } from "../stores/store";
 import 'animate.css';
 export default {
   components: {
     HomeIntroImg: HomeIntroImg,
   },
+  data() {
+    return {
+      showForm,
+    }
+  },
 };
 </script>
 
 <template>
-  <div class="home-intro">
+  <div class="home-intro" @click="showForm.isVisible = false" >
     <div class="home-intro-text">
       <h1>
         Надежная <span class="yellow">БУХГАЛТЕРИЯ</span> для
@@ -28,6 +34,7 @@ export default {
 
 <style scoped>
 .home-intro {
+  margin-top: 50px;
   height: 577px;
   padding: 0 50px 100px 100px;
   display: flex;

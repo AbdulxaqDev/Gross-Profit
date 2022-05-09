@@ -16,7 +16,8 @@ export default{
   data() {
     return {
       showNav: false,
-      showForm
+      showForm,
+      activeLink: 1,
     }
   },
   methods: {
@@ -25,6 +26,9 @@ export default{
     },
     showBotForm(){
       this.showForm.isVisible = !this.showForm.isVisible 
+    },
+    activeNavLinks(i){
+      this.activeLink = i
     }
   },
 };
@@ -66,13 +70,13 @@ export default{
         </RouterLink>
         <ul :class="showNav? 'showNav' : ''">
           <li>
-            <RouterLink to="/index.html">Главная</RouterLink>
+            <RouterLink id="navlinkk" @click="activeNavLinks(1)" :class="this.activeLink == 1? 'activeLinkNav':'' "  to="/">Главная</RouterLink>
           </li>
           <li>
-            <RouterLink to="/about">О нас</RouterLink>
+            <RouterLink @click="activeNavLinks(2)" :class="activeLink == 2? 'activeLinkNav':'' " to="/about">О нас</RouterLink>
           </li>
           <li>
-            <RouterLink to="/service">Услуги</RouterLink>
+            <RouterLink @click="activeNavLinks(3)" :class="activeLink == 3? 'activeLinkNav':'' " to="/service">Услуги</RouterLink>
           </li>
         </ul>
         <div class="phoneNumber" :class="showNav? 'showNav2' : ''">
@@ -242,6 +246,22 @@ ul li a:hover:after {
   cursor: pointer;
   transition: 0.3s;
   color: #fff;
+}
+
+nav ul li a.activeLinkNav {
+  transition: 0.2s ease-in-out;
+  color: rgba(24, 32, 97, 1);
+}
+
+nav ul li a.activeLinkNav:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: rgba(24, 32, 97, 1);
+  position: absolute;
+  transition: 0.2s ease-in-out;
+  bottom: 0;
 }
 
 

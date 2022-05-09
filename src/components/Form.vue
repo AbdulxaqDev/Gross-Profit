@@ -18,6 +18,9 @@ export default {
             let name = document.getElementById('name').value;
             let phoneNumber = document.getElementById('phoneNumber').value;
             let description = document.getElementById('description').value;
+            if (name == '' || phoneNumber == '' || description == '') {
+                return
+            }
             let my_text = `Имя:  ${name}%0AТелефонный номер:  ${phoneNumber}%0AДополнительная информация:  ${description}`
 
             const token = '5398248085:AAHtX4fgYmWfVzDbe4GjVxWMmXiGK0ZTOys';
@@ -26,6 +29,7 @@ export default {
             let api = new XMLHttpRequest();
             api.open('GET', url, true);
             api.send();
+            this.showForm.isVisible = false;
             this.cleanMessage()
         },
         cleanMessage() {
@@ -33,81 +37,19 @@ export default {
             document.getElementById('phoneNumber').value = '';
             document.getElementById('description').value = '';
         }
-    },
-    computed: {
-
-    },
-    mounted() {
-        // // this.sendMessage();
-        // const form = document.getElementById('form')
-        // form.addEventListener('submit', this.sendMessage)
     }
 }
-
-
-// onMounted(() => {
-
-//     const sendMessage = () => {
-
-//         let name = document.getElementById('name').value;
-//         let phoneNumber = document.getElementById('phoneNumber').value;
-//         let description = document.getElementById('description').value;
-//         let my_text = `Имя:  ${name}%0AТелефонный номер:  ${phoneNumber}%0AДополнительная информация:  ${description}`
-
-//         const token = '5398248085:AAHtX4fgYmWfVzDbe4GjVxWMmXiGK0ZTOys';
-//         const chat_id = -633562777
-//         const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`
-//         let api = new XMLHttpRequest();
-//         api.open('GET', url, true);
-//         api.send();
-//         this.cleanMessage()
-//     }
-
-//     const cleanMessage = () => {
-//         document.getElementById('name').value = '';
-//         document.getElementById('phoneNumber').value = '';
-//         document.getElementById('description').value = '';
-//     }
-
-
-
-//     const form = document.getElementById('form')
-//     form.addEventListener('submit', () => {
-
-//         let email = document.getElementById('email').value;
-//         let my_text = `Email:  ${email}`
-
-//         const token = '5398248085:AAHtX4fgYmWfVzDbe4GjVxWMmXiGK0ZTOys';
-//         const chat_id = -633562777
-//         const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`
-//         let api = new XMLHttpRequest();
-//         api.open('GET', url, true);
-//         api.send();
-//         cleanMessage();
-//     })
-
-
-
-
-
-// })
-
-
-
-
-
-
 </script>
 
 <template>
     <form @submit.prevent="" class="bot-form" :class="showForm.isVisible ? '' : 'hideForm'">
         <h1>Заказать звонок</h1>
         <p>Ваше имя <span class="yellow">*</span></p>
-        <input type="text" id="name">
+        <input required type="text" id="name">
         <p>Ваш телефон <span class="yellow">*</span></p>
-        <input type="text" id="phoneNumber">
+        <input required type="text" id="phoneNumber">
         <p>Дополнительная информация</p>
-        <textarea name="" id="description" cols="30" rows="10"></textarea>
+        <textarea required name="" id="description" cols="30" rows="10"></textarea>
         <div class="submit">
             <input @click="sendMessage" type="submit" value="Заказать звонок">
         </div>

@@ -35,7 +35,9 @@ export default {
 
                 let email = document.getElementById('email').value;
                 let my_text = `Email:  ${email}`
-
+                if (email == '') {
+                    return
+                }
                 const token = '5398248085:AAHtX4fgYmWfVzDbe4GjVxWMmXiGK0ZTOys';
                 const chat_id = -633562777
                 const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`
@@ -82,7 +84,7 @@ export default {
                         <img src="../assets/HomeIntroImg/cover.png" alt="">
                         <h2>Мы свяжемся с вами!</h2>
                     </div>
-                    <input type="text" id="email" placeholder="E-mail">
+                    <input type="text" required id="email" placeholder="E-mail">
                     <input type="submit" value="Получить консультацию">
                 </form>
                 <p>

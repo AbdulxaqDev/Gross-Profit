@@ -13,7 +13,8 @@ export default {
     <div class="serviceCard">
         <h3>{{ title }}</h3>
         <p>{{ description }}</p>
-        <img :src="imageUrl" alt="Service">
+        <img :src="imageUrl" alt="Services">
+        <button>Подробнее</button>
     </div>
 </template>
 
@@ -21,8 +22,9 @@ export default {
 .serviceCard {
     background: #FFFFFF;
     border-radius: 20px;
-    max-width: 100%;
+    max-width: 45%;
     width: 100%;
+    min-width: 440px;
     height: 334px;
     position: relative;
     display: flex;
@@ -41,7 +43,7 @@ export default {
 
 .serviceCard img {
     position: absolute;
-    width: 140px;
+    width: 130px;
     right: 22px;
     bottom: 9px;
 }
@@ -54,11 +56,43 @@ p {
 .serviceCard p {
     width: 90%;
     line-height: 24px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.03em;
+    color: #3E3D3D;
+    opacity: 0.6;
 }
 
 .serviceCard h3 {
     margin-bottom: 20px;
     color: #182061;
+}
+
+button {
+    position: absolute;
+    width: 165px;
+    height: 50px;
+    left: 50px;
+    bottom: 30px;
+    background: #FFFFFF;
+    border: 1px solid #182061;
+    border-radius: 25px 1px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #182061;
+}
+button:hover{
+    color: #fff;
+    background: #182061;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 @media (max-width: 900px) {
