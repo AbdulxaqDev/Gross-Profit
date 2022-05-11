@@ -1,12 +1,16 @@
 <script>
 import 'animate.css';
 import { serviceData } from '../serviceData';
-import ServiceCardPro from './ServiceCardPro.vue';
 import { showForm } from '../stores/store'
+import ServiceCardPro from './ServiceCardPro.vue';
+import ServiceExtraCardCorner from './ServiceExtraCardCorner.vue';
+import ServiceExtraCard from './ServiceExtraCard.vue'
 
 export default {
     components: {
-        'ServiceCardPro': ServiceCardPro
+        'ServiceCardPro': ServiceCardPro,
+        'ServiceExtraCard': ServiceExtraCard,
+        'ServiceExtraCardCorner': ServiceExtraCardCorner,
     },
     data() {
         return {
@@ -43,7 +47,13 @@ export default {
                 </div>
                 <img :src="data[showForm.index].imgLink" alt="Calculation">
             </div>
-            <p class="text">{{ data[showForm.index].text }}</p>
+            <p class="text" v-html="data[showForm.index].text"></p>
+            <ServiceExtraCard v-for="(item, index) in data[showForm.index].extraDescription"
+                :extra-description="data[showForm.index].extraDescription[index]" :key="item" />
+            <p class="text left" v-if="showForm.index == 1" > Формы ведения бизнеса в Узбекистане </p>
+            <ServiceExtraCardCorner v-for="(item, index) in data[showForm.index].forms"
+                :extra-description="data[showForm.index].forms[index]" :key="item" :backGround="index" />
+
         </div>
         <div class="other">
             <h1 class="title">Другие услуги</h1>
@@ -69,18 +79,19 @@ export default {
 
 .detailed {
     display: flex;
+    padding: 50px 70px;
     justify-self: center;
     align-items: center;
     flex-direction: column;
     background: #FFFFFF;
     border-radius: 25px;
-    padding: 50px 70px;
 }
 
 .title-img {
     display: flex;
-    justify-self: space-between;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .title {
@@ -101,10 +112,10 @@ export default {
 .title-img p {
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 17px;
     line-height: 150%;
     letter-spacing: 0.03em;
-    color: #3E3D3D;
+    color: #F4B504;
 }
 
 .title-img img {
@@ -114,12 +125,17 @@ export default {
 .text {
     margin-top: 30px;
     font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: 400;
+    font-size: 24px;
     line-height: 150%;
     letter-spacing: 0.03em;
-    color: #3E3D3D;
-    opacity: 0.6;
+    color: #182061;
+    text-align: justify;
+}
+
+.left{
+    text-align: left;
+    width: 100%;
 }
 
 .other {
@@ -139,9 +155,8 @@ export default {
 .card {
     background: #FFFFFF;
     border-radius: 20px;
-    max-width: 45%;
+    max-width: 35%;
     width: 100%;
-    min-width: 440px;
     position: relative;
     display: flex;
     justify-content: flex-start;
@@ -169,7 +184,8 @@ export default {
 }
 
 .activeCard {
-    background: #F4B504
+    background: #F4B504;
+    display: none;
 }
 
 
@@ -188,3 +204,4 @@ export default {
 
 @media(max-width: 750px) {}
 </style>
+

@@ -3,6 +3,6 @@ import { defineStore } from 'pinia'
 
 export const showForm = reactive({
     isVisible: false,
-    index: 0,
+    index: '',
     showDetailedSer: false,
 })

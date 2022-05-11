@@ -3,8 +3,9 @@ import 'animate.css';
 import { serviceData } from '../serviceData';
 import ServiceCardPro from './ServiceCardPro.vue';
 import { showForm } from '../stores/store'
+import { defineComponent } from '@vue/runtime-core';
 
-export default {
+export default defineComponent({
     components: {
         'ServiceCardPro': ServiceCardPro
     },
@@ -29,7 +30,7 @@ export default {
             });
         }
     },
-};
+});
 
 console.log(showForm.index);
 
@@ -76,6 +77,9 @@ console.log(showForm.index);
     height: 60px;
     left: 50px;
     top: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .corner h4 {

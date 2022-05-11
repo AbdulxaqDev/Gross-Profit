@@ -79,6 +79,9 @@ export default {
     height: 60px;
     left: 50px;
     top: -30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .corner h4 {

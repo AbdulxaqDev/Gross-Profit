@@ -3,15 +3,15 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
-import { library } from '@fortawesome/fontawesome-svg-core'
+// import { library } from '@fortawesome/fontawesome-svg-core'
 
-import { faHatWizard } from '@fortawesome/free-solid-svg-icons'
+// import { faHatWizard } from '@fortawesome/free-solid-svg-icons'
 
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
 
-library.add(faHatWizard)
+// library.add(faHatWizard)
 
 
 import mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
@@ -25,7 +25,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWJkdWxraGFrIiwiYSI6ImNsMjd1ZTN5ejAxODIzY3Azc
 
 const app = createApp(App)
 
-app.use(FontAwesomeIcon)
+// app.use(FontAwesomeIcon)
 
 app.use(createPinia())
 app.use(router)

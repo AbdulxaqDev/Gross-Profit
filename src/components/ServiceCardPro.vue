@@ -22,14 +22,13 @@ export default {
 .serviceCard {
     background: #FFFFFF;
     border-radius: 20px;
-    max-width: 45%;
-    width: 100%;
-    min-width: 440px;
-    height: 334px;
+    min-width: 35%;
+    width: 35%;
+    height: 220px;
     position: relative;
     display: flex;
     justify-content: flex-start;
-    flex-direction: column;
+    flex-wrap: wrap;
     margin: 18px;
     padding: 50px;
     box-shadow: 0 0 15px #f3f1f1;
@@ -43,7 +42,7 @@ export default {
 
 .serviceCard img {
     position: absolute;
-    width: 130px;
+    width: 120px;
     right: 22px;
     bottom: 9px;
 }
@@ -58,11 +57,12 @@ p {
     line-height: 24px;
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 150%;
     letter-spacing: 0.03em;
     color: #3E3D3D;
     opacity: 0.6;
+    margin-bottom: 30px;
 }
 
 .serviceCard h3 {
