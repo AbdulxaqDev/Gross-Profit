@@ -4,6 +4,14 @@ import { serviceData } from '../serviceData';
 import ServiceCardPro from './ServiceCardPro.vue';
 import { showForm } from '../stores/store'
 import { defineComponent } from '@vue/runtime-core';
+import card1 from '../assets/HomeIntroImg/calc.png'
+import card2 from '../assets/HomeIntroImg/stamp.png'
+import card3 from '../assets/HomeIntroImg/taxy.png'
+import card4 from '../assets/HomeIntroImg/man.png'
+import card5 from '../assets/HomeIntroImg/files.png'
+import card6 from '../assets/HomeIntroImg/searchLense.png'
+import card7 from '../assets/HomeIntroImg/scessor.png'
+import card8 from '../assets/HomeIntroImg/laptop.png'
 
 export default defineComponent({
     components: {
@@ -13,6 +21,16 @@ export default defineComponent({
         return {
             data: serviceData,
             showForm,
+            imageLinks:[
+                card1,
+                card2,
+                card3,
+                card4,
+                card5,
+                card6,
+                card7,
+                card8,
+            ]
         }
     },
     methods: {
@@ -50,7 +68,7 @@ console.log(showForm.index);
         </p>
         <div class="cards">
             <ServiceCardPro v-for="(item, index) in data" :key="item" :title="item.title"
-                :description="item.description" :imageUrl="item.imgLink" @click="detailedSer(index, $event)" />
+                :description="item.description" :imageUrl="imageLinks[index]" @click="detailedSer(index, $event)" />
         </div>
     </div>
 </template>

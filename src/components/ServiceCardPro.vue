@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-    <div class="serviceCard">
+    <div class="serviceCardPro">
         <h3>{{ title }}</h3>
         <p>{{ description }}</p>
         <img :src="imageUrl" alt="Services">
@@ -19,7 +19,7 @@ export default {
 </template>
 
 <style scoped>
-.serviceCard {
+.serviceCardPro {
     background: #FFFFFF;
     border-radius: 20px;
     min-width: 35%;
@@ -35,24 +35,24 @@ export default {
     transition: 0.2s;
 }
 
-.serviceCard:hover {
+.serviceCardPro:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px #dbdbdb;
 }
 
-.serviceCard img {
+.serviceCardPro img {
     position: absolute;
     width: 120px;
     right: 22px;
     bottom: 9px;
 }
 
-.serviceCard h3,
+.serviceCardPro h3,
 p {
     z-index: 2;
 }
 
-.serviceCard p {
+.serviceCardPro p {
     width: 90%;
     line-height: 24px;
     font-style: normal;
@@ -65,7 +65,7 @@ p {
     margin-bottom: 30px;
 }
 
-.serviceCard h3 {
+.serviceCardPro h3 {
     margin-bottom: 20px;
     color: #182061;
 }
@@ -96,7 +96,7 @@ button:hover{
 }
 
 @media (max-width: 900px) {
-    .serviceCard p {
+    .serviceCardPro p {
         font-size: 12px;
     }
 }

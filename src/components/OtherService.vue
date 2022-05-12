@@ -5,6 +5,14 @@ import { showForm } from '../stores/store'
 import ServiceCardPro from './ServiceCardPro.vue';
 import ServiceExtraCardCorner from './ServiceExtraCardCorner.vue';
 import ServiceExtraCard from './ServiceExtraCard.vue'
+import card1 from '../assets/HomeIntroImg/calc.png'
+import card2 from '../assets/HomeIntroImg/stamp.png'
+import card3 from '../assets/HomeIntroImg/taxy.png'
+import card4 from '../assets/HomeIntroImg/man.png'
+import card5 from '../assets/HomeIntroImg/files.png'
+import card6 from '../assets/HomeIntroImg/searchLense.png'
+import card7 from '../assets/HomeIntroImg/scessor.png'
+import card8 from '../assets/HomeIntroImg/laptop.png'
 
 export default {
     components: {
@@ -15,7 +23,17 @@ export default {
     data() {
         return {
             data: serviceData,
-            showForm
+            showForm,
+            imageLinks:[
+                card1,
+                card2,
+                card3,
+                card4,
+                card5,
+                card6,
+                card7,
+                card8,
+            ]
         }
     },
     methods: {
@@ -45,7 +63,7 @@ export default {
                     <h1 class="title">{{ data[showForm.index].title }}</h1>
                     <p>{{ data[showForm.index].description }}</p>
                 </div>
-                <img :src="data[showForm.index].imgLink" alt="Calculation">
+                <img :src="imageLinks[showForm.index]" alt="Calculation">
             </div>
             <p class="text" v-html="data[showForm.index].text"></p>
             <ServiceExtraCard v-for="(item, index) in data[showForm.index].extraDescription"
