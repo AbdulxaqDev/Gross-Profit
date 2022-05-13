@@ -6,47 +6,47 @@ import { showForm } from '../stores/store'
 
 
 export default {
-    data(){
-        return{
+    data() {
+        return {
             showMessageCover: false,
         }
     },
     mounted() {
         // onMounted(() => {
-            const lonLat = [69.340188, 41.348679]
-            const mapE = document.getElementById('map').value
-            const map = new mapboxgl.Map({
-                container: 'map', // container ID
-                style: 'mapbox://styles/mapbox/streets-v11', // style URL
-                center: lonLat, // starting position [lng, lat]
-                zoom: 16 // starting zoom
-            });
+        const lonLat = [69.340188, 41.348679]
+        const mapE = document.getElementById('map').value
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            center: lonLat, // starting position [lng, lat]
+            zoom: 16 // starting zoom
+        });
 
-            new mapboxgl.Marker().setLngLat(lonLat).addTo(map);
+        new mapboxgl.Marker().setLngLat(lonLat).addTo(map);
 
-            const cleanMessage = () => {
-                document.getElementById('email').value = '';
+        const cleanMessage = () => {
+            document.getElementById('email').value = '';
+        }
+
+
+
+        const form = document.getElementById('form')
+        form.addEventListener('submit', () => {
+
+            let email = document.getElementById('email').value;
+            let my_text = `Email:  ${email}`
+            if (email == '') {
+                return
             }
-
-
-
-            const form = document.getElementById('form')
-            form.addEventListener('submit', () => {
-
-                let email = document.getElementById('email').value;
-                let my_text = `Email:  ${email}`
-                if (email == '') {
-                    return
-                }
-                const token = '5398248085:AAHtX4fgYmWfVzDbe4GjVxWMmXiGK0ZTOys';
-                const chat_id = -633562777
-                const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`
-                let api = new XMLHttpRequest();
-                api.open('GET', url, true);
-                api.send();
-                cleanMessage();
-                this.showMessageCover = !this.showMessageCover;
-            })
+            const token = '5398248085:AAHtX4fgYmWfVzDbe4GjVxWMmXiGK0ZTOys';
+            const chat_id = -633562777
+            const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`
+            let api = new XMLHttpRequest();
+            api.open('GET', url, true);
+            api.send();
+            cleanMessage();
+            this.showMessageCover = !this.showMessageCover;
+        })
         // })
     },
 }
@@ -61,7 +61,7 @@ export default {
             <img class="logoText" src="../assets/HomeIntroImg/logoText.png" alt="logo-text">
             <div>
                 <img src="../assets/HomeIntroImg/location.png" alt="">
-                <p>г.Ташкент,<br />улица Осиё 86/32</p>
+                <p>г. Ташкент, Мирзо-Улугбекский район, массив <br> Ялангач, улица Зафара Диёра, дом 119 "А"</p>
             </div>
             <div>
                 <img src="../assets/HomeIntroImg/calendar.png" alt="">
@@ -84,7 +84,7 @@ export default {
                         <img src="../assets/HomeIntroImg/cover.png" alt="">
                         <h2>Мы свяжемся с вами!</h2>
                     </div>
-                    <input type="text" required id="email" placeholder="E-mail">
+                    <input type="email" required id="email" placeholder="E-mail">
                     <input type="submit" value="Получить консультацию">
                 </form>
                 <p>
@@ -159,6 +159,11 @@ export default {
     align-items: center;
 }
 
+.contacts div img {
+    margin-right: 10px;
+    width: 20px;
+}
+
 .logoText {
     width: 170px;
 }
@@ -193,6 +198,10 @@ export default {
     margin-left: 20px;
 }
 
+.message .img-form div h5, p{
+    margin: 0;
+}
+
 .message form,
 .cover {
     display: flex;
@@ -203,10 +212,6 @@ export default {
 
 .cover {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     left: 0;
     top: 0;
     background: #F4F7FA;
@@ -214,7 +219,9 @@ export default {
     width: 473px;
     height: 420px;
     z-index: 2;
-    display: none;
+    visibility: hidden;
+    transition: 0.5s;
+    opacity: 0;
 }
 
 
@@ -227,7 +234,7 @@ form input {
     border-radius: 20px 1px;
 }
 
-form input[type=text] {
+form input[type=email] {
     outline: none;
     background: #FFFFFF;
     border: 0.5px solid #3E3D3D;
@@ -277,7 +284,10 @@ form input[type=submit]:hover {
 }
 
 .showMessageCover {
-    display: unset;
+    visibility: visible;
+    transition: 0.7s;
+    transform-origin: left;
+    opacity: 1;
 }
 
 @media(max-width: 1670px) {}

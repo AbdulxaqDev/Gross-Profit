@@ -6,7 +6,7 @@ export default {};
 <template>
     <div class="home-stake-holders">
         <div class="stake-holders-text">
-            <h1>Почему нужно выбрать <br>именнонас?</h1>
+            <h1>Почему нужно выбрать <br>именно нас?</h1>
             <h3>Мы поможем сократить <span class="yellow">расходы на 15%</span></h3>
             <p>Обратитесь к нам и увеличьте материальную выгоду,
                 так как бизнес станет более прозрачным</p>
@@ -16,7 +16,10 @@ export default {};
                     <h4>1</h4>
                 </div>
                 <div class="smallCard">
-                    <p>Окажем качественную поддержку</p>
+                    <p>Полностью
+                        заменим
+                        штатного
+                        бухгалтера</p>
                     <h4>2</h4>
                 </div>
                 <div class="smallCard">
@@ -74,8 +77,8 @@ export default {};
     margin: 30px 0;
 }
 
-.stakeHolders  img{
-    margin: 0 30px;
+.stakeHolders img {
+    margin: -10px 20px;
 }
 
 .home-stake-holders h1 {
@@ -112,7 +115,7 @@ export default {};
     text-align: center;
     letter-spacing: 0.05em;
     color: #3E3D3D;
-    margin: 80px 0;
+    margin: 0px 0;
 }
 
 .yellow {
@@ -154,7 +157,7 @@ export default {};
 .smallCard h4 {
     position: absolute;
     right: -14%;
-    bottom: -70%;
+    top: -70%;
     font-style: normal;
     font-weight: 600;
     font-size: 96px;

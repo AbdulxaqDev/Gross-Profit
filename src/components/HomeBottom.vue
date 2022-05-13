@@ -33,7 +33,7 @@
                 </a>
             </div>
         </div>
-        <p class="copyRight">© Copyright 2022 D. Q. T. Все права защищены!</p>
+        <p class="copyRight">© Copyright 2022 D. Q. A. Все права защищены!</p>
     </div>
 </template>
 

@@ -13,6 +13,13 @@ export default {
         }
     },
     methods: {
+        showModal(){
+            const el = document.getElementById('modal')
+            el.classList.add('showModal')
+            setTimeout(() => {
+                el.classList.remove('showModal')
+            }, 1000);
+        },
         sendMessage() {
 
             let name = document.getElementById('name').value;
@@ -30,7 +37,8 @@ export default {
             api.open('GET', url, true);
             api.send();
             this.showForm.isVisible = false;
-            this.cleanMessage()
+            this.cleanMessage();
+            this.showModal();
         },
         cleanMessage() {
             document.getElementById('name').value = '';
@@ -42,18 +50,29 @@ export default {
 </script>
 
 <template>
-    <form @submit.prevent="" class="bot-form" :class="showForm.isVisible ? '' : 'hideForm'">
-        <h1>Заказать звонок</h1>
-        <p>Ваше имя <span class="yellow">*</span></p>
-        <input required type="text" id="name">
-        <p>Ваш телефон <span class="yellow">*</span></p>
-        <input required type="text" id="phoneNumber">
-        <p>Дополнительная информация</p>
-        <textarea required name="" id="description" cols="30" rows="10"></textarea>
-        <div class="submit">
-            <input @click="sendMessage" type="submit" value="Заказать звонок">
+    <main>
+        <form @submit.prevent="" class="bot-form" :class="showForm.isVisible ? '' : 'hideForm'">
+            <h1>Заказать звонок</h1>
+            <p>Ваше имя <span class="yellow">*</span></p>
+            <input required type="text" id="name">
+            <p>Ваш телефон <span class="yellow">*</span></p>
+            <input required type="text" id="phoneNumber">
+            <p>Дополнительная информация</p>
+            <textarea required name="" id="description" cols="30" rows="10"></textarea>
+            <div class="submit">
+                <input @click="sendMessage" type="submit" value="Заказать звонок">
+            </div>
+        </form>
+        <div class="modal" id="modal">
+            <div class="top">
+                <img src="../assets/HomeIntroImg/modalTick.png" alt="">
+            </div>
+            <div class="bottom">
+                <h2>Oтлично!</h2>
+                <p>Bаше сообщение успешно отправлено!</p>
+            </div>
         </div>
-    </form>
+    </main>
 </template>
 
 
@@ -165,5 +184,57 @@ form input[type=submit]:hover {
 
 .hideForm {
     top: -120%;
+}
+
+.modal {
+    transition: 0.7s;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 300px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 20px;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    transition-delay: 0.3s;
+}
+
+.top {
+    height: 50%;
+    width: 100%;
+    background: #F4B504;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom {
+    height: 50%;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+}
+
+.top img {
+    width: 100px;
+}
+
+.bottom h2,
+p {
+    text-align: center;
+    color: #182061;
+}
+
+.showModal {
+    opacity: 1;
+    visibility: visible;
 }
 </style>

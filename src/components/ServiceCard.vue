@@ -23,13 +23,12 @@ export default {
     border-radius: 20px;
     max-width: 100%;
     width: 100%;
-    height: 334px;
     position: relative;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     margin: 18px;
-    padding: 50px;
+    padding: 30px;
     box-shadow: 0 0 15px #f3f1f1;
     transition: 0.2s;
 }
@@ -41,7 +40,7 @@ export default {
 
 .serviceCard img {
     position: absolute;
-    width: 140px;
+    width: 100px;
     right: 22px;
     bottom: 9px;
 }
@@ -54,6 +53,7 @@ p {
 .serviceCard p {
     width: 90%;
     line-height: 24px;
+    opacity: 0.6;
 }
 
 .serviceCard h3 {

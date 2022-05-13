@@ -18,7 +18,7 @@ export default {
   <div class="home-intro" @click="showForm.isVisible = false" >
     <div class="home-intro-text">
       <h1>
-        Надежная <span class="yellow">БУХГАЛТЕРИЯ</span> для
+        Надежная <br> <span class="yellow">БУХГАЛТЕРИЯ</span> для<br>
         <span class="yellow">ВАШЕГО БИЗНЕСА</span>
       </h1>
       <p>
@@ -59,6 +59,7 @@ export default {
 .home-intro-text h1 {
   color: rgba(24, 32, 97, 1);
   font-size: 48px;
+  min-width: 490px;
 }
 
 .home-intro-text a {

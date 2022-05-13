@@ -20,18 +20,13 @@ window.addEventListener('scroll', () => {
         <h1>О нас</h1>
         <div class="details">
             <HomeAboutImg />
-            <p id="abourText" class="about-text">Компания “GrossProfit” была создана в 2008 году. В нашей команде
-                собраны спесциалисты
-                из разных областей
-                имеющие опыт работы
-                более <b>17 лет.</b>
-                <br>
-                <br>
-                “GrossProfit” единственная в Ташкенте компания делающая специфические лицензи. За нашей помощью
-                обращаются собственники бизнеса из <b>всех городов Узбекистана.</b>
-                <br>
-                <br>
-                Мы секономили время и деньги более чем <b>2000</b> наших клиентов.
+            <p id="abourText" class="about-text">Консалтинговое агентство "GrossProfit" была основана в 2019 году для
+                того, чтобы помочь друзьям по бизнесу с бухгалтерским и налоговым учетом. <br><br> С самого начала нашим
+                главным принципом было работать добросовестно, а не зацикливаться на сиюминутной прибыли. Помогая
+                организовать бизнес близким людям, мы разделяли с ними ответственность за принимаемые решения,
+                стремились стать лучше и тем самым дать партнерам еще больше.
+
+
             </p>
             <div class="years-cards">
                 <div class="years-card">
@@ -99,9 +94,12 @@ window.addEventListener('scroll', () => {
     line-height: 150%;
     text-align: justify;
     letter-spacing: 0.03em;
+    color: #3E3D3D;
     width: 33%;
     visibility: hidden;
 }
+
+
 
 .showText {
     animation: fadeInUp;
@@ -147,6 +145,7 @@ window.addEventListener('scroll', () => {
 
 .text h2 {
     color: #182061;
+    margin: 0;
 }
 
 .text p {
@@ -157,6 +156,7 @@ window.addEventListener('scroll', () => {
     text-align: center;
     letter-spacing: 0.03em;
     color: #3E3D3D;
+    margin: 0;
 }
 
 .corner {

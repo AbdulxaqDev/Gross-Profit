@@ -124,7 +124,7 @@ export default defineComponent({
 
 header {
   z-index: 100;
-  background: #fff;
+  background: rgba(244, 247, 250, 1);
   position: fixed;
   top: 0;
   left: 0;
@@ -135,7 +135,7 @@ header {
 }
 
 header.sticky {
-  background: rgba(244, 247, 250, 1);
+  background: #fff;
   box-shadow: 0 0 10px rgb(216, 216, 216);
   transition: 0.5s;
   padding: 20px 0;
@@ -146,6 +146,7 @@ nav {
   justify-content: space-around;
   height: 73px;
   position: relative;
+  border: red solid 1px;
 }
 
 .logoPart {
@@ -352,7 +353,7 @@ nav ul li a.activeLinkNav:before {
     padding: 80px 0 0 20px;
     flex-direction: column;
     right: -60vw;
-    top: -20px;
+    top: -40px;
     height: 100vh;
     justify-content: flex-start;
     align-items: flex-start;
