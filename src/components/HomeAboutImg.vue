@@ -2,10 +2,10 @@
 import 'animate.css';
 
 window.addEventListener('scroll', () => {
-  const aboutImg = document.getElementById('box')
-  if (window.scrollY > 1500) {
-    aboutImg.classList.add('showImg')
-  }
+    const aboutImg = document.getElementById('box')
+    if (window.scrollY > 1500) {
+        aboutImg.classList.add('showImg')
+    }
 })
 
 </script>
@@ -67,7 +67,6 @@ window.addEventListener('scroll', () => {
     color: #182061;
 }
 
-
 @media(max-width: 1400px) {
     .home-about-img {
         transform: scale(0.8);
@@ -75,15 +74,6 @@ window.addEventListener('scroll', () => {
         transition: 0.5s;
     }
 }
-
-@media(max-width: 1290px) {}
-
-@media(max-width: 1220) {}
-
-@media(max-width: 900px) {}
-
-@media(max-width: 800px) {}
-
 
 @media(max-width: 400px) {
 

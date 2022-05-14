@@ -65,7 +65,7 @@ export default {
             </div>
             <div>
                 <img src="../assets/HomeIntroImg/calendar.png" alt="">
-                <p>с 09:00 - 18:00 пн-сб </p>
+                <p>пн-сб<br>с 09:00 - 18:00  </p>
             </div>
             <h4>(998) 99 218-55-88</h4>
         </div>
@@ -151,6 +151,10 @@ export default {
     align-items: center;
     width: 100%;
     margin-bottom: 30px;
+}
+
+.contacts P{
+    text-align: left;
 }
 
 .contacts div {

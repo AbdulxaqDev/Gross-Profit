@@ -13,8 +13,11 @@ export default {
     <div class="serviceCardPro">
         <h3>{{ title }}</h3>
         <p>{{ description }}</p>
-        <img :src="imageUrl" alt="Services">
-        <button>Подробнее</button>
+        <div class="image" >
+            <button>Подробнее</button>
+            <img :src="imageUrl" alt="Services">
+        </div>
+
     </div>
 </template>
 
@@ -24,16 +27,18 @@ export default {
     border-radius: 20px;
     min-width: 35%;
     width: 35%;
-    height: 220px;
     position: relative;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     margin: 18px;
-    padding: 50px;
+    padding: 48px 48px 10px;
     box-shadow: 0 0 15px #f3f1f1;
     transition: 0.2s;
+    height: 300px;
 }
+
+
 
 .serviceCardPro:hover {
     transform: scale(1.05);
@@ -41,10 +46,7 @@ export default {
 }
 
 .serviceCardPro img {
-    position: absolute;
     width: 120px;
-    right: 22px;
-    bottom: 9px;
 }
 
 .serviceCardPro h3,
@@ -70,12 +72,16 @@ p {
     color: #182061;
 }
 
+.serviceCardPro .image {
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
 button {
-    position: absolute;
     width: 165px;
     height: 50px;
-    left: 50px;
-    bottom: 30px;
     background: #FFFFFF;
     border: 1px solid #182061;
     border-radius: 25px 1px;
@@ -88,11 +94,18 @@ button {
     letter-spacing: 0.05em;
     color: #182061;
 }
-button:hover{
+
+button:hover {
     color: #fff;
     background: #182061;
     transition: 0.3s;
     cursor: pointer;
+}
+
+@media (max-width: 1225px) {
+    .serviceCardPro {
+        width: 100%;
+    }
 }
 
 @media (max-width: 900px) {

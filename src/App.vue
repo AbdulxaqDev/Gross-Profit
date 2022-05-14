@@ -1,5 +1,5 @@
 <script>
-import { showForm } from './stores/store'
+import { showForm, mobileNav } from './stores/store'
 import { RouterLink, RouterView } from "vue-router";
 import HomeView from "./views/HomeView.vue";
 import 'animate.css';
@@ -11,28 +11,26 @@ window.addEventListener("scroll", () => {
 });
 
 export default defineComponent({
-  components:{
+  components: {
     'HomeView': HomeView
   },
   data() {
     return {
-      showNav: false,
+      showNav: mobileNav.isVisible,
       showForm,
       activeLink: 1,
     }
   },
   methods: {
-    showNavLinks(){
+    showNavLinks() {
       this.showNav = !this.showNav
     },
-    showBotForm(){
-      this.showForm.isVisible = !this.showForm.isVisible 
+    showBotForm() {
+      this.showForm.isVisible = !this.showForm.isVisible;
     },
-    activeNavLinks(i){
-      this.activeLink = i
-    }
   },
 });
+
 
 </script>
 
@@ -69,23 +67,23 @@ export default defineComponent({
             аутсорсинг услуг
           </p>
         </RouterLink>
-        <ul :class="showNav? 'showNav' : ''">
+        <ul :class="showNav ? 'showNav' : ''">
           <li>
-            <RouterLink id="navlinkk" @click="activeNavLinks(1)" :class="this.activeLink == 1? 'activeLinkNav':'' "  to="/">Главная</RouterLink>
+            <RouterLink to="/">Главная</RouterLink>
           </li>
           <li>
-            <RouterLink @click="activeNavLinks(2)" :class="activeLink == 2? 'activeLinkNav':'' " to="/about">О нас</RouterLink>
+            <RouterLink to="/about">О нас</RouterLink>
           </li>
           <li>
-            <RouterLink @click="activeNavLinks(3)" :class="activeLink == 3? 'activeLinkNav':'' " to="/service">Услуги</RouterLink>
+            <RouterLink to="/service">Услуги</RouterLink>
           </li>
         </ul>
-        <div class="phoneNumber" :class="showNav? 'showNav2' : ''">
+        <div class="phoneNumber" :class="showNav ? 'showNav2' : ''">
           <p>(998) 99 218-55-88</p>
-          <button @click="showBotForm" >Заказать<br />звонок</button>
+          <button @click="showBotForm">Заказать<br />звонок</button>
         </div>
 
-        <div class="icons" @click="showNavLinks" >
+        <div class="icons" @click="showNavLinks">
           <svg width="300" height="300" viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"
             onclick="this.classList.toggle('active')">
             <g transform="matrix(1,0,0,1,-389.5,-264.004)">
@@ -119,6 +117,7 @@ export default defineComponent({
 .app {
   padding-top: 81px;
   background: linear-gradient(252.37deg, #F1F5F9 37.94%, #F4F7FA 100%);
+  margin: -8px;
 }
 
 
@@ -146,7 +145,6 @@ nav {
   justify-content: space-around;
   height: 73px;
   position: relative;
-  border: red solid 1px;
 }
 
 .logoPart {
@@ -194,21 +192,6 @@ nav ul li a {
 
 nav ul li a:hover {
   color: rgba(24, 32, 97, 1);
-}
-
-ul li a:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: rgba(62, 61, 61, 1);
-  position: absolute;
-  opacity: 0;
-  transition: 0.2s ease-in-out;
-}
-
-ul li a:hover:after {
-  opacity: 1;
 }
 
 .phoneNumber {
@@ -345,21 +328,20 @@ nav ul li a.activeLinkNav:before {
     background: #fff;
   }
 
-  .icons{
+  .icons {
     visibility: visible;
   }
 
   nav ul {
     padding: 80px 0 0 20px;
     flex-direction: column;
-    right: -60vw;
+    right: -100vw;
     top: -40px;
     height: 100vh;
     justify-content: flex-start;
     align-items: flex-start;
     max-width: 50vw;
     width: 100%;
-    box-shadow: 0 0 10px #afafaf;
   }
 
   nav ul li {
@@ -387,6 +369,8 @@ nav ul li a.activeLinkNav:before {
 
   .showNav {
     right: 0;
+    box-shadow: -50vw 0 0 #727272e4;
+    border-left: 1px solid #cecece;
   }
 
   .showNav2 {
@@ -396,25 +380,11 @@ nav ul li a.activeLinkNav:before {
 
 @media (max-width: 600px) {
 
-  .accounting{
+  .accounting {
     display: none;
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </style>
 
 

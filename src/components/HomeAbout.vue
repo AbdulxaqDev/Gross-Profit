@@ -1,10 +1,11 @@
 <script>
 import HomeAboutImg from './HomeAboutImg.vue'
 import 'animate.css';
+
 export default {
     components: {
         'HomeAboutImg': HomeAboutImg
-    }
+    },
 };
 
 window.addEventListener('scroll', () => {
@@ -16,7 +17,7 @@ window.addEventListener('scroll', () => {
 </script>
 
 <template>
-    <div class="home-about">
+    <div class="home-about" @click="showForm.hideBotForm">
         <h1>О нас</h1>
         <div class="details">
             <HomeAboutImg />
@@ -25,28 +26,26 @@ window.addEventListener('scroll', () => {
                 главным принципом было работать добросовестно, а не зацикливаться на сиюминутной прибыли. Помогая
                 организовать бизнес близким людям, мы разделяли с ними ответственность за принимаемые решения,
                 стремились стать лучше и тем самым дать партнерам еще больше.
-
-
             </p>
             <div class="years-cards">
                 <div class="years-card">
                     <div class="text">
-                        <h2>17</h2>
+                        <h2>3+</h2>
                         <p>лет на рынке Узбекистана</p>
                     </div>
                     <div class="corner"></div>
                 </div>
                 <div class="years-card">
                     <div class="text">
-                        <h2>12</h2>
+                        <h2>40+</h2>
                         <p>доволних клиентов</p>
                     </div>
-                    <div class="corner"></div>
+                    <div class="blue corner"></div>
                 </div>
                 <div class="years-card">
                     <div class="text">
-                        <h2>3</h2>
-                        <p>квалифицированных специалистов</p>
+                        <h2>100%</h2>
+                        <p>конфиденциальность ваших данных</p>
                     </div>
                     <div class="corner"></div>
                 </div>
@@ -170,6 +169,9 @@ window.addEventListener('scroll', () => {
     border-radius: 25px 1px;
     z-index: 1;
 }
+.blue{
+    background: #182061;
+}
 
 .home-about a {
     text-decoration: none;
@@ -192,6 +194,7 @@ window.addEventListener('scroll', () => {
     height: 50px;
     font-size: 16px;
     font-weight: 700;
+    font-weight: 400;
 }
 
 .home-about button:hover {

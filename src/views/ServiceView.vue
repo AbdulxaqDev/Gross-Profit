@@ -5,7 +5,9 @@ import OtherService from "../components/OtherService.vue";
 import Form from "../components/Form.vue";
 import { showForm } from '../stores/store'
 import { defineComponent } from "@vue/runtime-core";
-import {serviceData} from '../serviceData' 
+import {serviceData} from '../serviceData'
+import HomeBottom from "../components/HomeBottom.vue";
+
 
 
 export default defineComponent({
@@ -14,6 +16,7 @@ export default defineComponent({
     'HomeFooter': HomeFooter,
     'OtherService': OtherService,
     'Form': Form,
+    'HomeBottom': HomeBottom,
   },
   data() {
     return {
@@ -32,6 +35,7 @@ export default defineComponent({
     <OtherService v-if="showForm.showDetailedSer" />
     <HomeFooter />
     <Form />
+    <HomeBottom />
   </div>
 </template>
 

@@ -5,8 +5,9 @@ import card1 from '../assets/HomeIntroImg/calc.png'
 import card2 from '../assets/HomeIntroImg/stamp.png'
 import card3 from '../assets/HomeIntroImg/files.png'
 import card4 from '../assets/HomeIntroImg/taxy.png'
-import card5 from '../assets/HomeIntroImg/scessor.png'
+import card5 from '../assets/HomeIntroImg/man.png'
 import { showForm } from "../stores/store";
+import { RouterLink, RouterView } from "vue-router";
 
 
 
@@ -17,36 +18,36 @@ export default {
   data() {
     return {
       card1: {
-        title: "Бухгалтерское сопровождение в Узбекистане",
-        description: "Берём на себя всю бугалтерию! Ведем налоговый учет и готовим счета к оплате вовремя и без задержек.",
+        title: "Бухгалтерское сопровождениe",
+        description: "Берём на себя всю бугалтерию!<br>Ведем налоговый учет и готовим счета к оплате вовремя и без задержек.",
         path: card1
 
       },
       card2: {
-        title: "Регистрация компании в Республике Узбекистан",
-        description: "Подготовим отчетность и оповестим вас o сроках. Вам остается только подписать отчёты.",
+        title: "Регистрация компании",
+        description: "Правильное оформление документов, быстрое и легкое прохождение процедуры регистрации, получение свидетельств.",
         path: card2
 
       },
       card3: {
-        title: "Восстановление бухгалтерского учета в Узбекистане",
-        description: "Подготовка документов и платежи контрагентам",
+        title: "Восстановление<br>бухгалтерского учета",
+        description: "Все документы приводятся в порядок и восстанавливаются отсутствующие документы.",
         path: card3
 
       },
       card4: {
-        title: "Перерегистрация (Изменение)",
-        description: "Контроль и управление всеми счетами",
+        title: "Перерегистрация<br>юридического лица",
+        description: "Любые изменения, связанные с изменением положений учредительных документов фирмы.",
         path: card4
 
       },
       card5: {
-        title: "Ликвидация предприятия в Узбекистане",
-        description: "Наши специалисты всегда готовыответить на возникшие y вас вопросы в чате или любом мессеннджере",
+        title: "Разрешение на<br>привлечение иностранной<br>рабочей силы",
+        description: "Быстрое и легкое прохождение процедуры.",
         path: card5
 
       },
-    showForm
+      showForm
     }
   },
   methods: {
@@ -73,7 +74,7 @@ export default {
 </script>
 
 <template>
-  <div class="homeService">
+  <div class="homeService" @click="showForm.hideBotForm">
     <h1>НАШИ УСЛУГИ</h1>
     <div class="cards" id="groupOne">
       <ServiceCard class="" :title="card1.title" :description="card1.description" :imageUrl="card1.path" />
@@ -84,7 +85,7 @@ export default {
       <ServiceCard class="" :title="card4.title" :description="card4.description" :imageUrl="card4.path" />
       <ServiceCard class="" :title="card5.title" :description="card5.description" :imageUrl="card5.path" />
     </div>
-    <a href="#" @click="showBotForm"><button>Оставить заявку</button></a>
+    <RouterLink to="/service">Все услуги</RouterLink>
   </div>
 </template>
 
@@ -128,10 +129,6 @@ export default {
   text-decoration: none;
   font-weight: 500;
   margin-top: 50px;
-}
-
-
-.homeService button {
   background: #fff;
   color: #182061;
   display: flex;
@@ -144,10 +141,12 @@ export default {
   border-radius: 20px 0 20px 0;
   height: 50px;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 400;
 }
 
-.homeService button:hover {
+
+
+.homeService a:hover {
   background: #182061;
   color: #fff;
   cursor: pointer;

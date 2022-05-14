@@ -92,8 +92,8 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     position: fixed;
-    max-width: 600px;
-    width: 90vw;
+    /* max-width: 600px;
+    width: 90vw; */
     background: #FFFFFF;
     box-shadow: 1px 1px 30px #828282;
     border-radius: 25px;
@@ -103,6 +103,8 @@ h1 {
     align-items: center;
     flex-direction: column;
     padding: 30px 0;
+    height: 80vh;
+    width: 80vw;
 }
 
 .bot-form input[type=text],
@@ -227,7 +229,7 @@ form input[type=submit]:hover {
     width: 100px;
 }
 
-.bottom h2,
+.bottom h2, .bottom
 p {
     text-align: center;
     color: #182061;

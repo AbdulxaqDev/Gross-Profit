@@ -4,7 +4,7 @@ export default {};
 </script>
 
 <template>
-    <div class="home-stake-holders">
+    <div class="home-stake-holders" @click="showForm.hideBotForm">
         <div class="stake-holders-text">
             <h1>Почему нужно выбрать <br>именно нас?</h1>
             <h3>Мы поможем сократить <span class="yellow">расходы на 15%</span></h3>
@@ -51,7 +51,7 @@ export default {};
     justify-content: space-around;
     align-items: flex-start;
     flex-direction: row;
-    padding: 0 100px 100px;
+    padding: 0 100px;
 }
 
 

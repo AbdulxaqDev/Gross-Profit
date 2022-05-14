@@ -11,22 +11,35 @@ export default {
       showForm,
     }
   },
+  methods: {
+    showBottForm(key) {
+      if (key == 2) {
+        this.showForm.isVisible = false;
+        return;
+      }
+      this.showForm.isVisible = !this.showForm.isVisible;
+    },
+    fireForm(){
+      setTimeout(() => {
+        this.showBottForm(1)
+      }, 200);
+    }
+  },
 };
 </script>
-
 <template>
-  <div class="home-intro" @click="showForm.isVisible = false" >
+  <div class="home-intro" @click="showBottForm(2)">
     <div class="home-intro-text">
       <h1>
-        Надежная <br> <span class="yellow">БУХГАЛТЕРИЯ</span> для<br>
+        Надежная <br> <span class="yellow">БУХГАЛТЕРИЯ</span><br> для
         <span class="yellow">ВАШЕГО БИЗНЕСА</span>
       </h1>
       <p>
-        Вы занимаетесь бизнесом, мы занимаемся Вашей бухгалтерией. Ваша
+        Вы занимаетесь бизнесом, мы занимаемся Вашей бухгалтерией.<br>Ваша
         личная команда профессиональных бухгалтеров, которая всегда под
         рукой.
       </p>
-      <a href=""><button>Оставить заявку</button></a>
+      <button @click="fireForm">Оставить заявку</button>
     </div>
     <HomeIntroImg />
   </div>
@@ -34,14 +47,14 @@ export default {
 
 <style scoped>
 .home-intro {
-  margin-top: 50px;
+  margin-top: 10px;
   height: 577px;
   padding: 0 50px 100px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 
 .home-intro-text {
@@ -59,12 +72,8 @@ export default {
 .home-intro-text h1 {
   color: rgba(24, 32, 97, 1);
   font-size: 48px;
-  min-width: 490px;
-}
-
-.home-intro-text a {
-  text-decoration: none;
-  font-weight: 500;
+  min-width: 600px;
+  margin-top: -10px;
 }
 
 .home-intro-text p {
@@ -72,9 +81,13 @@ export default {
   font-weight: 400;
   line-height: 21px;
   font-size: 14px;
+  max-width: 547px;
+  margin-top: -90px;
 }
 
 .home-intro-text button {
+  text-decoration: none;
+  font-weight: 500;
   background: rgba(244, 181, 4, 1);
   color: #fff;
   display: flex;
@@ -94,6 +107,7 @@ export default {
   background: #fff;
   cursor: pointer;
   transition: 0.3s;
+  color: rgba(244, 181, 4, 1);
 }
 
 .home-intro-text a:hover button {
@@ -154,9 +168,9 @@ export default {
   .home-intro-text p {
     width: 300px;
   }
+
   .home-intro-text button {
     margin-top: 20px;
   }
 }
-
 </style>

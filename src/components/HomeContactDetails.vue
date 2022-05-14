@@ -3,7 +3,7 @@ import 'animate.css';
 </script>
 
 <template>
-    <div class="home-contact-details">
+    <div class="home-contact-details" @click="showForm.hideBotForm">
         <h1>Этапы работы с нами<br>очен просты</h1>
         <div class="smallCards">
             <div class="frame">
@@ -13,15 +13,15 @@ import 'animate.css';
                 <div class="cornerBlock"></div>
                 <p>Вы оставдяете заявку и наш менеджер связывается с Вами</p>
             </div>
-            <img class="arrow" src="../assets/HomeIntroImg/arrow.png" alt="">
-            <div class="frame">
+            <img class="arrow" src="../assets/HomeIntroImg/arrow2.png" alt="">
+            <div class="frame topMargin">
                 <div class="smallCard">
                     <img src="../assets/HomeIntroImg/layers.png" alt="">
                 </div>
-                <div class="cornerBlock"></div>
+                <div class="cornerBlock blue"></div>
                 <p>Определяем план работы, стоимость и подписываем договор</p>
             </div>
-            <img class="arrow" src="../assets/HomeIntroImg/arrow.png" alt="">
+            <img class="arrow" src="../assets/HomeIntroImg/arrow2.png" alt="">
             <div class="frame">
                 <div class="smallCard">
                     <img src="../assets/HomeIntroImg/people.png" alt="">
@@ -29,12 +29,12 @@ import 'animate.css';
                 <div class="cornerBlock"></div>
                 <p>Наши специалисты приводят в порядок отчетность</p>
             </div>
-            <img class="arrow" src="../assets/HomeIntroImg/arrow.png" alt="">
+            <img class="arrow" src="../assets/HomeIntroImg/arrow2.png" alt="">
             <div class="frame">
                 <div class="smallCard">
                     <img src="../assets/HomeIntroImg/list.png" alt="">
                 </div>
-                <div class="cornerBlock"></div>
+                <div class="cornerBlock blue"></div>
                 <p>Вы регулярно получаете готовую отчетность</p>
             </div>
         </div>
@@ -60,7 +60,7 @@ import 'animate.css';
     text-align: center;
     letter-spacing: 0.08em;
     color: #182061;
-    margin-bottom: 80px;
+    margin-bottom: 55px;
 }
 
 .smallCards {
@@ -83,8 +83,19 @@ import 'animate.css';
     text-align: center;
 }
 
+.topMargin{
+    margin-top: 25px;
+}
+
 .frame p {
-    margin: 20px;
+    margin: 50px 0px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #3E3D3D;
 }
 
 .cornerBlock {
@@ -93,6 +104,11 @@ import 'animate.css';
     width: 180px;
     height: 100px;
 }
+
+.blue{
+    background:  #182061;
+}
+
 
 .smallCard {
     position: absolute;
@@ -107,8 +123,10 @@ import 'animate.css';
     top: 15px;
 }
 
+
+
 .arrow {
-    margin-top: -50px;
+    margin-top: -90px;
 }
 
 
@@ -127,8 +145,8 @@ import 'animate.css';
         height: 100px;
         background: #FFFFFF;
         border-radius: 20px;
-        left: 50px;
-        top: 15px;
+        left: 80px;
+        top: 25px;
     }
 
 }

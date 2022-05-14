@@ -46,12 +46,9 @@ export default defineComponent({
                 top: 0,
                 behavior: 'smooth',
             });
-        }
+        },
     },
 });
-
-console.log(showForm.index);
-
 
 </script>
 

@@ -2,6 +2,7 @@
 import AboutAbout from "../components/AboutAbout.vue";
 import HomeFooter from "../components/HomeFooter.vue";
 import Form from "../components/Form.vue";
+import HomeBottom from "../components/HomeBottom.vue";
 
 
 export default {
@@ -9,6 +10,7 @@ export default {
     'AboutAbout': AboutAbout,
     'HomeFooter': HomeFooter,
     'Form': Form,
+    'HomeBottom': HomeBottom,
   },
   mounted() {
     console.log(this._inactive)
@@ -18,15 +20,16 @@ export default {
 
 <template>
   <div class="about" id="about">
-    <p>Главная / <b>О нас</b></p>
+    <p class="common" >Главная / <b>О нас</b></p>
     <AboutAbout />
     <HomeFooter />
     <Form />
+    <HomeBottom />
   </div>
 </template>
 
 <style scoped>
-p {
+.common {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;

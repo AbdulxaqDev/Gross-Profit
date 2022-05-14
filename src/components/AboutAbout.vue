@@ -1,5 +1,6 @@
 <script>
 import 'animate.css';
+
 export default {
     created() {
         window.scrollTo(0, 0);
@@ -10,30 +11,31 @@ export default {
 <template>
     <div class="about-about">
         <div class="corner">
-            <h4>НАШИ Компании</h4>
+            <h4>О НАС</h4>
         </div>
         <div class="image-text">
             <img src="../assets/HomeIntroImg/aboutAboutImg.png" alt="">
             <div class="title-text">
-                <h3>17+ лет опыта</h3>
-                <p>Компания “GrossProfit” была
-                    создана в 2008 году. В нашей
-                    команде собраны спесци имеющие
-                    опыт работы более 17 лет.
+                <p>
+                    Консалтинговое агентство "GrossProfit" была основана в 2019 году для того, чтобы помочь друзьям по
+                    бизнесу с бухгалтерским и налоговым учетом. С самого начала нашим главным принципом было работать
+                    добросовестно, а не зацикливаться на сиюминутной прибыли. Помогая организовать бизнес близким людям,
+                    мы разделяли с ними ответственность за принимаемые решения, стремились стать лучше и тем самым дать
+                    партнерам еще больше.
                 </p>
                 <div class="smallCards">
                     <div class="smallCard">
-                        <h1>17+</h1>
+                        <h1>3+</h1>
                         <p>лет опыта</p>
                     </div>
                     <div class="smallCard">
-                        <h1>12</h1>
+                        <h1>40+</h1>
                         <p>доволних
                             клиентов
                         </p>
                     </div>
                     <div class="smallCard">
-                        <h1>3</h1>
+                        <h1>100</h1>
                         <p>квалифицированных
                             специалистов
                         </p>
@@ -42,17 +44,16 @@ export default {
             </div>
         </div>
         <p class="text">
-            “GrossProfit” единственная в Ташкенте компания делающая специфические лицензи. За нашей помощью обращаются
-            собственники бизнеса из <b>всех городов Узбекистана.</b>
+            GrossProfit — это консалтинговое агентство, которая делает жизнь легче, проще и спокойнее. Да, многие
+            компании говорят о себе так, но давайте мы попробуем очень коротко объяснить, что мы имеем в виду.
             <br>
             <br>
-            Мы секономили время и деньги более чем <b>2000</b> наших клиентов.
+            Ведение бизнеса в Узбекистане — сложное дело, отнимающее почти всё время, которое у вас есть. Вы ведете свой
+            бизнес, во-первых, что занятие это благодарное. А во-вторых, что вам это просто нравится.
             <br>
             <br>
-            Компания “GrossProfit” была создана в 2008 году. В нашей команде собраны спесциалисты из разных областей
-            имеющие опыт работы более 17 лет. Компания “GrossProfit” была создана в 2008 году. В нашей команде собраны
-            спесциалисты из разных областей имеющие опыт работы более 17 лет. Мы секономили время и деньги более чем
-            2000 наших клиентов.
+            Мы вас отлично понимаем, — потому что у нас тоже свой бизнес, и он тоже требует всего нашего времени и всех
+            наших сил. И он нам нравится, — точно так же, как вам нравится ваш.
         </p>
     </div>
 </template>
@@ -98,7 +99,7 @@ export default {
     position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
 }
 
@@ -120,11 +121,10 @@ export default {
 .title-text p {
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 150%;
     letter-spacing: 0.03em;
     color: #182061;
-    margin-bottom: 120px;
 }
 
 .img {
@@ -136,7 +136,7 @@ export default {
 
 .smallCards {
     position: absolute;
-    right: 50px;
+    right: -30px;
     bottom: 50px;
     display: flex;
     justify-content: center;
@@ -161,6 +161,7 @@ export default {
     text-align: center;
     letter-spacing: 0.03em;
     color: #3E3D3D;
+    margin-top: -30px;
 }
 
 
@@ -190,10 +191,18 @@ export default {
     margin-top: 50px;
 }
 
+@media(max-width: 1420px) {
+    .title-text{
+        margin: 0;
+    }
+    
+}
 
 @media(max-width: 1300px) {
     .image-text {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .title-text {
@@ -212,13 +221,11 @@ export default {
         width: 100%;
     }
 
-    .title-text p{
+    .title-text p {
         margin-bottom: 20px;
         text-align: justify;
     }
 }
-
-@media(max-width: 1300px) {}
 
 @media(max-width: 1290px) {}
 

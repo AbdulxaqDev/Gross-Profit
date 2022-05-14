@@ -13,14 +13,14 @@ export default {};
     <div class="smallCard">
       <img src="../assets/HomeIntroImg/farxod.png" alt="Фарход Исроилов">
       <div>
-        <p class="smallCardName">Фарход Исроилов</p>
+        <h2 class="smallCardName">Фарход Исроилов</h2>
         <p>Налоговый консультант</p>
       </div>
     </div>
     <div class="smallCard secondSmallCard">
       <img src="../assets/HomeIntroImg/farxod.png" alt="Фарход Исроилов">
       <div>
-        <p class="smallCardName">OOO “МЕЧТА”</p>
+        <h2 class="smallCardName">OOO “МЕЧТА”</h2>
         <p>Мне нужна ваша помощь</p>
       </div>
     </div>
@@ -120,10 +120,11 @@ export default {};
   font-size: 14px;
   line-height: 17px;
   color: #3E3D3D;
+  margin-left: -10px;
 }
 
 .secondSmallCard {
-  top: 100%;
+  top: 80%;
   height: 70px;
   left: -12%;
   animation: pulse;
@@ -131,15 +132,20 @@ export default {};
   animation-duration: 0.5s;
 }
 
+.smallCardName {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #182061;
+  margin-bottom: -10px;
+  margin-left: -10px;
+}
+
 @media(max-width: 1290px) {
   .homeIntroImg {
     transform: scale(0.9);
-  }
-}
-
-@media(max-width: 1220) {
-  .homeIntroImg {
-    transform: scale(0.7);
   }
 }
 
@@ -149,8 +155,9 @@ export default {};
   }
 }
 
-@media(max-width: 970px) {
+@media(max-width: 980px) {
   .homeIntroImg {
+    border: red solid 1px;
     display: none;
   }
 }

@@ -11,9 +11,11 @@ export default {
 
 <template>
     <div class="serviceCard">
-        <h3>{{ title }}</h3>
-        <p>{{ description }}</p>
-        <img :src="imageUrl" alt="Service">
+        <h3 v-html="title" ></h3>
+        <p v-html="description"></p>
+        <div class="image" >
+            <img :src="imageUrl" alt="Service">
+        </div>
     </div>
 </template>
 
@@ -25,12 +27,13 @@ export default {
     width: 100%;
     position: relative;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-direction: column;
     margin: 18px;
     padding: 30px;
     box-shadow: 0 0 15px #f3f1f1;
     transition: 0.2s;
+    padding: 30px 30px 10px;
 }
 
 .serviceCard:hover {
@@ -38,11 +41,10 @@ export default {
     box-shadow: 0 0 20px #dbdbdb;
 }
 
-.serviceCard img {
-    position: absolute;
-    width: 100px;
-    right: 22px;
-    bottom: 9px;
+.serviceCard .image {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .serviceCard h3,
@@ -51,14 +53,16 @@ p {
 }
 
 .serviceCard p {
-    width: 90%;
     line-height: 24px;
     opacity: 0.6;
+    font-size: 16px;
 }
 
 .serviceCard h3 {
-    margin-bottom: 20px;
+    font-size: 20px;
+    margin-bottom: -10px;
     color: #182061;
+    font-weight: 500;
 }
 
 @media (max-width: 900px) {

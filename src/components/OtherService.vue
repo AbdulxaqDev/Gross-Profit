@@ -163,7 +163,6 @@ export default {
 }
 
 .cards {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -205,21 +204,5 @@ export default {
     background: #F4B504;
     display: none;
 }
-
-
-
-@media(max-width: 1500px) {}
-
-@media(max-width: 1300px) {}
-
-@media(max-width: 1290px) {}
-
-@media(max-width: 1220) {}
-
-@media(max-width: 900px) {}
-
-@media(max-width: 800px) {}
-
-@media(max-width: 750px) {}
 </style>
 
