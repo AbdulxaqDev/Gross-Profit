@@ -7,7 +7,6 @@ import card3 from '../assets/HomeIntroImg/files.png'
 import card4 from '../assets/HomeIntroImg/taxy.png'
 import card5 from '../assets/HomeIntroImg/man.png'
 import { showForm } from "../stores/store";
-import { RouterLink, RouterView } from "vue-router";
 
 
 
@@ -143,8 +142,6 @@ export default {
   font-size: 16px;
   font-weight: 400;
 }
-
-
 
 .homeService a:hover {
   background: #182061;

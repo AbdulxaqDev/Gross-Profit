@@ -1,5 +1,4 @@
 <script>
-import IntroMan from "../assets/HomeIntroImg/Group338.png";
 export default {};
 </script>
 

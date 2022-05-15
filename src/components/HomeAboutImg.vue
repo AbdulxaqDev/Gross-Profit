@@ -1,13 +1,14 @@
 <script>
 import 'animate.css';
 
+
+
 window.addEventListener('scroll', () => {
     const aboutImg = document.getElementById('box')
     if (window.scrollY > 1500) {
         aboutImg.classList.add('showImg')
     }
 })
-
 </script>
 
 <template>

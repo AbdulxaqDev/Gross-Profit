@@ -18,7 +18,7 @@ export default {
             <div class="title-text">
                 <p>
                     Консалтинговое агентство "GrossProfit" была основана в 2019 году для того, чтобы помочь друзьям по
-                    бизнесу с бухгалтерским и налоговым учетом. С самого начала нашим главным принципом было работать
+                    бизнесу с бухгалтерским и налоговым учетом.<br><br>С самого начала нашим главным принципом было работать
                     добросовестно, а не зацикливаться на сиюминутной прибыли. Помогая организовать бизнес близким людям,
                     мы разделяли с ними ответственность за принимаемые решения, стремились стать лучше и тем самым дать
                     партнерам еще больше.
@@ -137,7 +137,7 @@ export default {
 .smallCards {
     position: absolute;
     right: -30px;
-    bottom: 50px;
+    bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -226,14 +226,4 @@ export default {
         text-align: justify;
     }
 }
-
-@media(max-width: 1290px) {}
-
-@media(max-width: 1220) {}
-
-@media(max-width: 900px) {}
-
-@media(max-width: 800px) {}
-
-@media(max-width: 750px) {}
 </style>

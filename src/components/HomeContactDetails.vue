@@ -83,7 +83,7 @@ import 'animate.css';
     text-align: center;
 }
 
-.topMargin{
+.topMargin {
     margin-top: 25px;
 }
 
@@ -105,8 +105,8 @@ import 'animate.css';
     height: 100px;
 }
 
-.blue{
-    background:  #182061;
+.blue {
+    background: #182061;
 }
 
 
@@ -123,13 +123,9 @@ import 'animate.css';
     top: 15px;
 }
 
-
-
 .arrow {
     margin-top: -90px;
 }
-
-
 
 @media(max-width: 1570px) {
     .frame {
@@ -167,16 +163,4 @@ import 'animate.css';
         transform: rotateZ(90deg);
     }
 }
-
-@media(max-width: 1300px) {}
-
-@media(max-width: 1290px) {}
-
-@media(max-width: 1220) {}
-
-@media(max-width: 900px) {}
-
-@media(max-width: 800px) {}
-
-@media(max-width: 750px) {}
 </style>

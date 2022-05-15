@@ -24,6 +24,9 @@ export default defineComponent({
       data: serviceData
     }
   },
+  created() {
+    this.showForm.showDetailedSer = false;
+  },
 });
 </script>
 

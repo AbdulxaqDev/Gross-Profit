@@ -1,21 +1,27 @@
 <script>
 import 'animate.css'
+import { RouterLink, RouterView } from "vue-router";
+
+
+
 export default {
     props: [
         'title',
         'description',
         'imageUrl',
-    ]
+    ],
 };
 </script>
 
 <template>
     <div class="serviceCard">
-        <h3 v-html="title" ></h3>
-        <p v-html="description"></p>
-        <div class="image" >
-            <img :src="imageUrl" alt="Service">
-        </div>
+        <RouterLink to="/service">
+            <h3 v-html="title"></h3>
+            <p v-html="description"></p>
+            <div class="image">
+                <img :src="imageUrl" alt="Service">
+            </div>
+        </RouterLink>
     </div>
 </template>
 
@@ -34,6 +40,16 @@ export default {
     box-shadow: 0 0 15px #f3f1f1;
     transition: 0.2s;
     padding: 30px 30px 10px;
+}
+
+.serviceCard a {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.03em;
+    color: #3E3D3D;
 }
 
 .serviceCard:hover {

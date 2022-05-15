@@ -32,9 +32,6 @@
                 href="http://rdevs.uz/gross-profit">Разработчики</a> </p>
     </div>
 </template>
-
-
-
 <style scoped>
 .home-bottom {
     display: flex;
@@ -95,20 +92,4 @@ img {
 .social-links svg:hover {
     fill: #F4B504;
 }
-
-@media(max-width: 1670px) {}
-
-@media(max-width: 1300px) {}
-
-@media(max-width: 1290px) {}
-
-@media(max-width: 1220) {}
-
-@media(max-width: 1050px) {}
-
-@media(max-width: 900px) {}
-
-@media(max-width: 800px) {}
-
-@media(max-width: 750px) {}
 </style>

@@ -1,8 +1,5 @@
 <script>
-
 import { showForm } from '../stores/store'
-
-
 
 
 
@@ -13,12 +10,12 @@ export default {
         }
     },
     methods: {
-        showModal(){
+        showModal() {
             const el = document.getElementById('modal')
             el.classList.add('showModal')
             setTimeout(() => {
                 el.classList.remove('showModal')
-            }, 1000);
+            }, 2000);
         },
         sendMessage() {
 
@@ -48,7 +45,6 @@ export default {
     }
 }
 </script>
-
 <template>
     <main>
         <form @submit.prevent="" class="bot-form" :class="showForm.isVisible ? '' : 'hideForm'">
@@ -92,8 +88,6 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     position: fixed;
-    /* max-width: 600px;
-    width: 90vw; */
     background: #FFFFFF;
     box-shadow: 1px 1px 30px #828282;
     border-radius: 25px;
@@ -229,8 +223,8 @@ form input[type=submit]:hover {
     width: 100px;
 }
 
-.bottom h2, .bottom
-p {
+.bottom h2,
+.bottom p {
     text-align: center;
     color: #182061;
 }

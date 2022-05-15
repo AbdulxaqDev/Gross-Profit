@@ -80,16 +80,4 @@ img {
 .blueBack{
     background: #182061;
 }
-
-@media(max-width: 1300px) {}
-
-@media(max-width: 1290px) {}
-
-@media(max-width: 1220) {}
-
-@media(max-width: 900px) {}
-
-@media(max-width: 800px) {}
-
-@media(max-width: 750px) {}
 </style>

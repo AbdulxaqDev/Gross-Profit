@@ -2,8 +2,6 @@
 
 import mapboxgl from "mapbox-gl";
 import { onBeforeMount, onMounted } from "vue";
-import { showForm } from '../stores/store'
-
 
 export default {
     data() {
@@ -12,7 +10,6 @@ export default {
         }
     },
     mounted() {
-        // onMounted(() => {
         const lonLat = [69.340188, 41.348679]
         const mapE = document.getElementById('map').value
         const map = new mapboxgl.Map({
@@ -27,7 +24,6 @@ export default {
         const cleanMessage = () => {
             document.getElementById('email').value = '';
         }
-
 
 
         const form = document.getElementById('form')
@@ -47,12 +43,10 @@ export default {
             cleanMessage();
             this.showMessageCover = !this.showMessageCover;
         })
-        // })
     },
 }
 
 </script>
-
 
 <template>
     <div class="home-footer">
@@ -95,8 +89,6 @@ export default {
         </div>
     </div>
 </template>
-
-
 
 <style scoped>
 #map {
@@ -244,7 +236,6 @@ form input[type=email] {
     border: 0.5px solid #3E3D3D;
 }
 
-
 form input[type=submit] {
     transition: 0.3s;
     background: #F4B504;
@@ -294,14 +285,6 @@ form input[type=submit]:hover {
     opacity: 1;
 }
 
-@media(max-width: 1670px) {}
-
-@media(max-width: 1300px) {}
-
-@media(max-width: 1290px) {}
-
-@media(max-width: 1220) {}
-
 @media(max-width: 1050px) {
 
     .contacts,
@@ -320,10 +303,4 @@ form input[type=submit]:hover {
     }
 
 }
-
-@media(max-width: 900px) {}
-
-@media(max-width: 800px) {}
-
-@media(max-width: 750px) {}
 </style>

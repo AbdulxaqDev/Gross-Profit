@@ -98,8 +98,6 @@ window.addEventListener('scroll', () => {
     visibility: hidden;
 }
 
-
-
 .showText {
     animation: fadeInUp;
     animation-duration: 1s;
@@ -169,7 +167,8 @@ window.addEventListener('scroll', () => {
     border-radius: 25px 1px;
     z-index: 1;
 }
-.blue{
+
+.blue {
     background: #182061;
 }
 
@@ -178,7 +177,6 @@ window.addEventListener('scroll', () => {
     font-weight: 500;
     margin-top: 50px;
 }
-
 
 .home-about button {
     background: #fff;
@@ -232,16 +230,6 @@ window.addEventListener('scroll', () => {
     }
 }
 
-@media(max-width: 1300px) {}
-
-@media(max-width: 1290px) {}
-
-@media(max-width: 1220) {}
-
-@media(max-width: 900px) {}
-
-@media(max-width: 800px) {}
-
 @media(max-width: 750px) {
 
     .home-about {
@@ -271,7 +259,5 @@ window.addEventListener('scroll', () => {
         font-size: 15px;
         max-width: 80%;
     }
-
-
 }
 </style>

@@ -1,6 +1,5 @@
 <script>
 import 'animate.css'
-export default {};
 </script>
 
 <template>
@@ -53,7 +52,6 @@ export default {};
     flex-direction: row;
     padding: 0 100px;
 }
-
 
 .stake-holders-text {
     height: 100%;
@@ -182,14 +180,6 @@ export default {};
         width: 100%;
     }
 }
-
-@media(max-width: 1290px) {}
-
-@media(max-width: 1220) {}
-
-@media(max-width: 1220px) {}
-
-@media(max-width: 970px) {}
 
 @media(max-width: 620px) {
 
