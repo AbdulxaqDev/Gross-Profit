@@ -101,6 +101,7 @@ export default {
   height: 50px;
   font-size: 16px;
   font-weight: 700;
+  font-family: 'montserrat';
 }
 
 .home-intro-text button:hover {

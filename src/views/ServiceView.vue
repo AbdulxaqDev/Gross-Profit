@@ -26,6 +26,7 @@ export default defineComponent({
   },
   created() {
     this.showForm.showDetailedSer = false;
+    this.showForm.index = '';
   },
 });
 </script>
@@ -33,7 +34,7 @@ export default defineComponent({
 <template>
   <div class="service" id="service">
     <p v-if="showForm.index === ''">Главная / <b>Услуги</b></p>
-    <p v-else>Главная / <b>{{data[showForm.index].title}}</b></p>
+    <p v-else>Главная / Услуги /<b>{{data[showForm.index].title}}</b></p>
     <ServiceService v-if="!showForm.showDetailedSer" />
     <OtherService v-if="showForm.showDetailedSer" />
     <HomeFooter />

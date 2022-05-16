@@ -1,5 +1,4 @@
 <script>
-import 'animate.css';
 </script>
 
 <template>

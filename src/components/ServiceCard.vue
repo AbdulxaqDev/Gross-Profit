@@ -1,5 +1,4 @@
 <script>
-import 'animate.css'
 import { RouterLink, RouterView } from "vue-router";
 
 
@@ -9,6 +8,7 @@ export default {
         'title',
         'description',
         'imageUrl',
+        'index'
     ],
 };
 </script>
@@ -16,7 +16,7 @@ export default {
 <template>
     <div class="serviceCard">
         <RouterLink to="/service">
-            <h3 v-html="title"></h3>
+            <h3 v-html="title" :class="index > '2' ? 'secondLine' : 'firstLine'"></h3>
             <p v-html="description"></p>
             <div class="image">
                 <img :src="imageUrl" alt="Service">
@@ -35,7 +35,7 @@ export default {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    margin: 18px;
+    margin: 15px;
     padding: 30px;
     box-shadow: 0 0 15px #f3f1f1;
     transition: 0.2s;
@@ -72,11 +72,17 @@ p {
     line-height: 24px;
     opacity: 0.6;
     font-size: 16px;
+    line-height: 150%;
 }
 
-.serviceCard h3 {
+.firstLine {
+    font-size: 24px;
+    color: #182061;
+    font-weight: 600;
+}
+
+.secondLine {
     font-size: 20px;
-    margin-bottom: -10px;
     color: #182061;
     font-weight: 500;
 }

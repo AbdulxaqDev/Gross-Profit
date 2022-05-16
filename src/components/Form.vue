@@ -47,6 +47,7 @@ export default {
 </script>
 <template>
     <main>
+        <div class="closer" @click="showForm.isVisible = false" :class="showForm.isVisible? 'activeCloser': ''"></div>
         <form @submit.prevent="" class="bot-form" :class="showForm.isVisible ? '' : 'hideForm'">
             <h1>Заказать звонок</h1>
             <p>Ваше имя <span class="yellow">*</span></p>
@@ -73,6 +74,22 @@ export default {
 
 
 <style scoped>
+
+.closer{
+    position: fixed;
+    left: 0;
+    top: -100vh;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0) ;
+    z-index: 90;
+    transition: 0.7s;
+}
+
+.activeCloser{
+    top: 0;
+}
+
 h1 {
     font-style: normal;
     font-weight: 600;
@@ -164,6 +181,7 @@ form input[type=submit] {
     width: 214;
     padding: 10px;
     box-sizing: border-box;
+    font-family: 'montserrat';
     border-radius: 20px 1px;
 }
 

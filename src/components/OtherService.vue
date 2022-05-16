@@ -1,5 +1,4 @@
 <script>
-import 'animate.css';
 import { serviceData } from '../serviceData';
 import { showForm } from '../stores/store'
 import ServiceCardPro from './ServiceCardPro.vue';
@@ -24,7 +23,7 @@ export default {
         return {
             data: serviceData,
             showForm,
-            imageLinks:[
+            imageLinks: [
                 card1,
                 card2,
                 card3,
@@ -39,17 +38,18 @@ export default {
     methods: {
         detailedSer(index) {
             this.showForm.index = index;
-            // This prevents the page from scrolling down to where it was previously.
             if ('scrollRestoration' in history) {
                 history.scrollRestoration = 'manual';
             }
-            // This is needed if the user scrolls down during page load and you want to make sure the page is scrolled to the top once it's fully loaded. This has Cross-browser support.
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth',
             });
-        }
-    },
+        },
+        showBotForm() {
+            this.showForm.isVisible = !this.showForm.isVisible;
+        },
+    }
 };
 
 </script>
@@ -67,10 +67,10 @@ export default {
             <p class="text" v-html="data[showForm.index].text"></p>
             <ServiceExtraCard v-for="(item, index) in data[showForm.index].extraDescription"
                 :extra-description="data[showForm.index].extraDescription[index]" :key="item" />
-            <p class="text left" v-if="showForm.index == 1" > Формы ведения бизнеса в Узбекистане </p>
+            <p class="text left" v-if="showForm.index == 1"> Формы ведения бизнеса в Узбекистане </p>
             <ServiceExtraCardCorner v-for="(item, index) in data[showForm.index].forms"
                 :extra-description="data[showForm.index].forms[index]" :key="item" :backGround="index" />
-
+            <button class="goToService" @click="showBotForm">Оставить заявку</button>
         </div>
         <div class="other">
             <h1 class="title">Другие услуги</h1>
@@ -85,6 +85,31 @@ export default {
 </template>
 
 <style scoped>
+.goToService {
+    margin-top: 37px;
+    width: 300px;
+    height: 60px;
+    background: #FFFFFF;
+    border: 1px solid #182061;
+    border-radius: 25px 1px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #182061;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.goToService:hover {
+    background: #182061;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
 .other-service {
     margin: 120px 100px 0;
     display: flex;
@@ -122,7 +147,7 @@ export default {
 
 .other h1 {
     text-align: left;
-    padding-left: 70px;
+    padding-left: 0px;
     margin-bottom: 30px;
 }
 
@@ -150,14 +175,14 @@ export default {
     text-align: justify;
 }
 
-.left{
+.left {
     text-align: left;
     width: 100%;
 }
 
 .other {
     padding: 50px 0;
-    margin-top: 100px;
+    margin-top: 0px;
     width: 100%;
 }
 
@@ -166,12 +191,13 @@ export default {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding: 0 -18px;
 }
 
 .card {
     background: #FFFFFF;
     border-radius: 20px;
-    max-width: 35%;
+    max-width: 39%;
     width: 100%;
     position: relative;
     display: flex;
@@ -181,10 +207,14 @@ export default {
     padding: 50px;
     box-shadow: 0 0 15px #f3f1f1;
     transition: 0.2s;
+    height: 60px;
+}
+
+.card:last-child {
+    margin-left: -600px;
 }
 
 .card:hover {
-    transform: translateY(-20px);
     background: #F4B504;
     transition: 0.3s ease-in-out;
     cursor: pointer;
@@ -202,6 +232,12 @@ export default {
 .activeCard {
     background: #F4B504;
     display: none;
+}
+
+@media(max-width: 1437px) {
+    .card:last-child {
+        margin-left: 0;
+    }
 }
 </style>
 

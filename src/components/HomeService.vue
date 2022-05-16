@@ -1,11 +1,12 @@
 <script>
 import ServiceCard from "./ServiceCard.vue";
+import { RouterLink, RouterView } from "vue-router";
 import 'animate.css'
-import card1 from '../assets/HomeIntroImg/calc.png'
-import card2 from '../assets/HomeIntroImg/stamp.png'
-import card3 from '../assets/HomeIntroImg/files.png'
-import card4 from '../assets/HomeIntroImg/taxy.png'
-import card5 from '../assets/HomeIntroImg/man.png'
+import card1 from '../assets/HomeIntroImg/calc.png';
+import card2 from '../assets/HomeIntroImg/stamp.png';
+import card3 from '../assets/HomeIntroImg/files.png';
+import card4 from '../assets/HomeIntroImg/taxy.png';
+import card5 from '../assets/HomeIntroImg/man.png';
 import { showForm } from "../stores/store";
 
 
@@ -53,21 +54,37 @@ export default {
     showBotForm() {
       this.showForm.isVisible = !this.showForm.isVisible
     },
-  },
-  created() {
-    window.addEventListener('scroll', (e) => {
+
+    detailedSer(index) {
+      // This prevents the page from scrolling down to where it was previously.
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      // This is needed if the user scrolls down during page load and you want to make sure the page is scrolled to the top once it's fully loaded. This has Cross-browser support.
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    openDetailedSer(i) {
+      this.showForm.index = i;
+      this.showForm.showDetailedSer = true;
+      this.detailedSer();
+    },
+    showHomeService() {
       if (window.scrollY > 260) {
         document.getElementById('groupOne').classList.add('showCards')
       }
       if (window.scrollY > 530) {
         document.getElementById('groupTwo').classList.add('showCards')
       }
-    })
+    }
+  },
+  created() {
+    window.addEventListener('scroll', this.showHomeService);
   },
   unmounted() {
-    window.removeEventListener('scroll', (e) => {
-      e.removeEventListener();
-    })
+    window.removeEventListener('scroll', this.showHomeService);
   },
 };
 </script>
@@ -76,13 +93,18 @@ export default {
   <div class="homeService" @click="showForm.hideBotForm">
     <h1>НАШИ УСЛУГИ</h1>
     <div class="cards" id="groupOne">
-      <ServiceCard class="" :title="card1.title" :description="card1.description" :imageUrl="card1.path" />
-      <ServiceCard class="" :title="card2.title" :description="card2.description" :imageUrl="card2.path" />
+      <ServiceCard :index="1" @click="openDetailedSer(0)" :title="card1.title" :description="card1.description"
+        :imageUrl="card1.path" />
+      <ServiceCard :index="2" @click="openDetailedSer(1)" :title="card2.title" :description="card2.description"
+        :imageUrl="card2.path" />
     </div>
     <div class="cards" id="groupTwo">
-      <ServiceCard class="" :title="card3.title" :description="card3.description" :imageUrl="card3.path" />
-      <ServiceCard class="" :title="card4.title" :description="card4.description" :imageUrl="card4.path" />
-      <ServiceCard class="" :title="card5.title" :description="card5.description" :imageUrl="card5.path" />
+      <ServiceCard :index="3" @click="openDetailedSer(2)" :title="card3.title" :description="card3.description"
+        :imageUrl="card3.path" />
+      <ServiceCard :index="4" @click="openDetailedSer(3)" :title="card4.title" :description="card4.description"
+        :imageUrl="card4.path" />
+      <ServiceCard :index="5" @click="openDetailedSer(4)" :title="card5.title" :description="card5.description"
+        :imageUrl="card5.path" />
     </div>
     <RouterLink to="/service">Все услуги</RouterLink>
   </div>
@@ -153,6 +175,7 @@ export default {
 .homeService a:hover button {
   color: #fff;
 }
+
 
 @media (max-width: 1300px) {
   #groupTwo {

@@ -53,7 +53,7 @@ export default {};
   width: 360.17px;
   height: 308.57px;
   left: 182.96px;
-  top: 273.28px;
+  top: 258.28px;
 
   background: linear-gradient(128.96deg,
       rgba(24, 32, 97, 0.85) 10.45%,
@@ -67,8 +67,8 @@ export default {};
   position: absolute;
   width: 340px;
   height: 577px;
-  left: 170px;
-  top: 10px;
+  left: 185px;
+  top: 8px;
   z-index: 5;
   background: url(image.png);
   border-radius: 0px;
@@ -102,7 +102,7 @@ export default {};
   width: 262px;
   height: 90px;
   position: absolute;
-  top: 30%;
+  top: 24%;
   left: 0%;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), linear-gradient(101.98deg, rgba(255, 255, 255, 0.12) 41.85%, rgba(255, 255, 255, 0) 144.37%);
   backdrop-filter: blur(26px);

@@ -6,14 +6,21 @@ export default {
     components: {
         'HomeAboutImg': HomeAboutImg
     },
+    methods: {
+        scrollEvent() {
+            const aboutImg = document.getElementById('abourText');
+            if (window.scrollY > 1500) {
+                aboutImg.classList.add('showText');
+            }
+        }
+    },
+    created() {
+        window.addEventListener('scroll', this.scollEvent);
+    },
+    unmounted() {
+        window.removeEventListener('scroll', this.scollEvent);
+    },
 };
-
-window.addEventListener('scroll', () => {
-    const aboutImg = document.getElementById('abourText');
-    if (window.scrollY > 1500) {
-        aboutImg.classList.add('showText')
-    }
-})
 </script>
 
 <template>

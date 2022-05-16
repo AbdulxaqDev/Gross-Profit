@@ -1,5 +1,4 @@
 <script>
-import 'animate.css';
 import { serviceData } from '../serviceData';
 import ServiceCardPro from './ServiceCardPro.vue';
 import { showForm } from '../stores/store'

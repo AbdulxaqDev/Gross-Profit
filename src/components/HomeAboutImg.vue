@@ -1,18 +1,24 @@
 <script>
-import 'animate.css';
-
-
-
-window.addEventListener('scroll', () => {
-    const aboutImg = document.getElementById('box')
-    if (window.scrollY > 1500) {
-        aboutImg.classList.add('showImg')
-    }
-})
+export default {
+    methods: {
+        scollEvent() {
+            const aboutImg = document.getElementById('box')
+            if (window.scrollY > 1500) {
+                aboutImg.classList.add('showImg')
+            }
+        },
+    },
+    created() {
+        window.addEventListener('scroll', this.scollEvent);
+    },
+    unmounted() {
+        window.removeEventListener('scroll', this.scollEvent);
+    },
+}
 </script>
 
 <template>
-    <div class="home-about-img" id="box" :class="showAboutImg ? 'showImg' : ''">
+    <div class="home-about-img" id="box">
         <div class="corner-block"></div>
         <img src="../assets/HomeIntroImg/aboutImg.png" alt="">
         <div class="corner-block2"></div>

@@ -145,6 +145,7 @@ nav {
   justify-content: space-around;
   height: 73px;
   position: relative;
+  height: 40px;
 }
 
 .logoPart {

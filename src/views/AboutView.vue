@@ -12,9 +12,6 @@ export default {
     'Form': Form,
     'HomeBottom': HomeBottom,
   },
-  mounted() {
-    console.log(this._inactive)
-  },
 };
 </script>
 
