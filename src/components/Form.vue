@@ -47,15 +47,21 @@ export default {
 </script>
 <template>
     <main>
-        <div class="closer" @click="showForm.isVisible = false" :class="showForm.isVisible? 'activeCloser': ''"></div>
+        <div class="closer" @click="showForm.isVisible = false" :class="showForm.isVisible ? 'activeCloser' : ''"></div>
         <form @submit.prevent="" class="bot-form" :class="showForm.isVisible ? '' : 'hideForm'">
             <h1>Заказать звонок</h1>
-            <p>Ваше имя <span class="yellow">*</span></p>
-            <input required type="text" id="name">
-            <p>Ваш телефон <span class="yellow">*</span></p>
-            <input required type="text" id="phoneNumber">
-            <p>Дополнительная информация</p>
-            <textarea required name="" id="description" cols="30" rows="10"></textarea>
+            <div class="inputs">
+                <p>Ваше имя <span class="yellow">*</span></p>
+                <input required type="text" id="name">
+            </div>
+            <div class="inputs">
+                <p>Ваш телефон <span class="yellow">*</span></p>
+                <input required type="text" id="phoneNumber">
+            </div>
+            <div class="inputs">
+                <p>Дополнительная информация</p>
+                <textarea required name="" id="description" cols="30" rows="10"></textarea>
+            </div>
             <div class="submit">
                 <input @click="sendMessage" type="submit" value="Заказать звонок">
             </div>
@@ -74,19 +80,26 @@ export default {
 
 
 <style scoped>
+.inputs {
+    display: flex;
+    justify-content: space-between;
+    max-width: 85%;
+    width: 100%;
+    margin-bottom: 30px;
+}
 
-.closer{
+.closer {
     position: fixed;
     left: 0;
     top: -100vh;
     width: 100vw;
     height: 100vh;
-    background: rgba(255, 255, 255, 0) ;
+    background: rgba(255, 255, 255, 0);
     z-index: 90;
     transition: 0.7s;
 }
 
-.activeCloser{
+.activeCloser {
     top: 0;
 }
 
@@ -113,14 +126,17 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 30px 0;
-    height: 80vh;
-    width: 80vw;
+    padding: 10px 0 30px;
+    max-height: 688px;
+    height: 100%;
+    max-width: 1240px;
+    width: 100%;
 }
 
 .bot-form input[type=text],
 textarea {
-    width: 90%;
+    max-width: 755px;
+    width: 100%;
     height: 50px;
     background: #FFFFFF;
     border: 0.5px solid #3E3D3D;
@@ -144,7 +160,6 @@ textarea {
 
 p {
     text-align: left;
-    width: 90%;
     margin: 10px 0;
 }
 
@@ -166,8 +181,8 @@ textarea:focus {
 
 form input[type=submit] {
     transition: 0.3s;
-    background: #F4B504;
-    color: #fff;
+    background: #ffffff;
+    color: #182061;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,19 +192,20 @@ form input[type=submit] {
     font-weight: 700;
     margin-bottom: 20px;
     margin-top: 25px;
+    margin-right: 30px;
     height: 50px;
-    width: 214;
+    width: 240px;
     padding: 10px;
     box-sizing: border-box;
     font-family: 'montserrat';
     border-radius: 20px 1px;
+    border: #182061 1px solid;
 }
 
 form input[type=submit]:hover {
     cursor: pointer;
-    background: #fff;
-    color: #F4B504;
-    border: #F4B504 1px solid;
+    background: #182061;
+    color: #fff;
 }
 
 .yellow {
@@ -250,5 +266,15 @@ form input[type=submit]:hover {
 .showModal {
     opacity: 1;
     visibility: visible;
+}
+
+@media(max-width: 1210px) {
+    .inputs {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 85%;
+        margin-bottom: 30px;
+    }
 }
 </style>

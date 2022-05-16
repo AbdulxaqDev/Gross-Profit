@@ -23,11 +23,14 @@ export default defineComponent({
   },
   methods: {
     showNavLinks() {
-      this.showNav = !this.showNav
+      this.showNav = !this.showNav;
     },
     showBotForm() {
       this.showForm.isVisible = !this.showForm.isVisible;
     },
+    closeNavLinks(){
+      this.showNav = false;
+    }
   },
 });
 
@@ -68,14 +71,15 @@ export default defineComponent({
           </p>
         </RouterLink>
         <ul :class="showNav ? 'showNav' : ''">
+          <div class="closeNavLinks" @click="closeNavLinks" ></div>
           <li>
-            <RouterLink to="/">Главная</RouterLink>
+            <RouterLink @click="closeNavLinks" to="/">Главная</RouterLink>
           </li>
           <li>
-            <RouterLink to="/about">О нас</RouterLink>
+            <RouterLink @click="closeNavLinks" to="/about">О нас</RouterLink>
           </li>
           <li>
-            <RouterLink to="/service">Услуги</RouterLink>
+            <RouterLink @click="closeNavLinks" to="/service">Услуги</RouterLink>
           </li>
         </ul>
         <div class="phoneNumber" :class="showNav ? 'showNav2' : ''">
@@ -181,6 +185,16 @@ nav ul {
   min-width: 200px;
   width: 100%;
   transition: ease-in-out 0.6s;
+  position: relative;
+}
+
+.closeNavLinks{
+  top: 0;
+  left: -100%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 0, 0, 0);
 }
 
 nav ul li a {
