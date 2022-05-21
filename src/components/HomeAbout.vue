@@ -8,16 +8,17 @@ export default {
     },
     methods: {
         scrollEvent() {
-            const aboutImg = document.getElementById('abourText');
+            const aboutImg = document.getElementById('aboutText');
             if (window.scrollY > 1500) {
                 aboutImg.classList.add('showText');
+                console.log('sssssssssssssssssssssssssssssssssssssssssssssssssss');
             }
         }
     },
     created() {
         window.addEventListener('scroll', this.scollEvent);
     },
-    unmounted() {
+    des() {
         window.removeEventListener('scroll', this.scollEvent);
     },
 };
@@ -28,7 +29,7 @@ export default {
         <h1>О нас</h1>
         <div class="details">
             <HomeAboutImg />
-            <p id="abourText" class="about-text">Консалтинговое агентство "GrossProfit" была основана в 2019 году для
+            <p id="aboutText" class="about-text">Консалтинговое агентство "GrossProfit" была основана в 2019 году для
                 того, чтобы помочь друзьям по бизнесу с бухгалтерским и налоговым учетом. <br><br> С самого начала нашим
                 главным принципом было работать добросовестно, а не зацикливаться на сиюминутной прибыли. Помогая
                 организовать бизнес близким людям, мы разделяли с ними ответственность за принимаемые решения,
@@ -102,7 +103,6 @@ export default {
     letter-spacing: 0.03em;
     color: #3E3D3D;
     width: 33%;
-    visibility: hidden;
 }
 
 .showText {

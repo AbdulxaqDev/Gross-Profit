@@ -79,6 +79,8 @@ export default {
                     :class="index == showForm.index ? 'activeCard' : ''" @click="detailedSer(index, $event)">
                     <h2>{{ item.title }}</h2>
                 </div>
+                <div class="card no-need">
+                </div>
             </div>
         </div>
     </div>
@@ -210,10 +212,6 @@ export default {
     height: 60px;
 }
 
-.card:last-child {
-    margin-left: -600px;
-}
-
 .card:hover {
     background: #F4B504;
     transition: 0.3s ease-in-out;
@@ -227,6 +225,10 @@ export default {
     line-height: 150%;
     letter-spacing: 0.05em;
     color: #182061;
+}
+
+.no-need{
+    visibility: hidden;
 }
 
 .activeCard {
