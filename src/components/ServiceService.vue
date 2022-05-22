@@ -29,6 +29,16 @@ export default defineComponent({
                 card6,
                 card7,
                 card8,
+            ],
+            serviceLinks:[
+                'service1',
+                'service2',
+                'service3',
+                'service4',
+                'service5',
+                'service6',
+                'service7',
+                'service8',
             ]
         }
     },
@@ -60,8 +70,8 @@ export default defineComponent({
             Мы рады предложить полный спектр бухгалтерских и юридических услуг, которые помогут вам сконцентрироваться на развитии бизнеса, пока мы отвечаем за ежедневные административные задачи.
         </p>
         <div class="cards">
-            <ServiceCardPro v-for="(item, index) in data" :key="item" :title="item.title"
-                :description="item.description" :imageUrl="imageLinks[index]" @click="detailedSer(index, $event)" />
+            <ServiceCardPro v-for="(item, index) in data" :key="index" :title="item.title"
+                :description="item.description" :imageUrl="imageLinks[index]" :serviceLink="serviceLinks[index]" />
         </div>
     </div>
 </template>

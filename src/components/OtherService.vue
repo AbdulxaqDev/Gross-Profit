@@ -1,43 +1,28 @@
 <script>
 import { serviceData } from '../serviceData';
-import { showForm } from '../stores/store'
-import ServiceCardPro from './ServiceCardPro.vue';
-import ServiceExtraCardCorner from './ServiceExtraCardCorner.vue';
-import ServiceExtraCard from './ServiceExtraCard.vue'
-import card1 from '../assets/HomeIntroImg/calc.png'
-import card2 from '../assets/HomeIntroImg/stamp.png'
-import card3 from '../assets/HomeIntroImg/taxy.png'
-import card4 from '../assets/HomeIntroImg/man.png'
-import card5 from '../assets/HomeIntroImg/files.png'
-import card6 from '../assets/HomeIntroImg/searchLense.png'
-import card7 from '../assets/HomeIntroImg/scessor.png'
-import card8 from '../assets/HomeIntroImg/laptop.png'
+
 
 export default {
-    components: {
-        'ServiceCardPro': ServiceCardPro,
-        'ServiceExtraCard': ServiceExtraCard,
-        'ServiceExtraCardCorner': ServiceExtraCardCorner,
-    },
+    props:[
+        'id'
+    ],
     data() {
         return {
             data: serviceData,
-            showForm,
-            imageLinks: [
-                card1,
-                card2,
-                card3,
-                card4,
-                card5,
-                card6,
-                card7,
-                card8,
+            serviceLinks: [
+                'service1',
+                'service2',
+                'service3',
+                'service4',
+                'service5',
+                'service6',
+                'service7',
+                'service8',
             ]
         }
     },
     methods: {
-        detailedSer(index) {
-            this.showForm.index = index;
+        detailedSer() {
             if ('scrollRestoration' in history) {
                 history.scrollRestoration = 'manual';
             }
@@ -49,40 +34,28 @@ export default {
         showBotForm() {
             this.showForm.isVisible = !this.showForm.isVisible;
         },
-    }
+    },
+    mounted() {
+        this.detailedSer();
+    },
+
 };
 
 </script>
 
 <template>
-    <div class="other-service">
-        <div class="detailed">
-            <div class="title-img">
-                <div>
-                    <h1 class="title">{{ data[showForm.index].title }}</h1>
-                    <p>{{ data[showForm.index].description }}</p>
-                </div>
-                <img :src="imageLinks[showForm.index]" alt="Calculation">
-            </div>
-            <p class="text" v-html="data[showForm.index].text"></p>
-            <ServiceExtraCard v-for="(item, index) in data[showForm.index].extraDescription"
-                :extra-description="data[showForm.index].extraDescription[index]" :key="item" />
-            <p class="text left" v-if="showForm.index == 1"> Формы ведения бизнеса в Узбекистане </p>
-            <ServiceExtraCardCorner v-for="(item, index) in data[showForm.index].forms"
-                :extra-description="data[showForm.index].forms[index]" :key="item" :backGround="index" />
-            <button class="goToService" @click="showBotForm">Оставить заявку</button>
-        </div>
         <div class="other">
             <h1 class="title">Другие услуги</h1>
             <div class="cards">
-                <div v-for="(item, index) in data" :key="item" class="card"
-                    :class="index == showForm.index ? 'activeCard' : ''" @click="detailedSer(index, $event)">
-                    <h2>{{ item.title }}</h2>
-                </div>
+                <RouterLink :to="serviceLinks[index]" v-for="(item, index) in data" :key="index" class="card"
+                    v-show="index != id">
+                    <div>
+                        <h2>{{ item.title }}</h2>
+                    </div>
+                </RouterLink>
                 <div class="card no-need">
                 </div>
             </div>
-        </div>
     </div>
 </template>
 
@@ -188,6 +161,10 @@ export default {
     width: 100%;
 }
 
+a.card {
+    text-decoration: none;
+}
+
 .cards {
     display: flex;
     justify-content: center;
@@ -227,7 +204,7 @@ export default {
     color: #182061;
 }
 
-.no-need{
+.no-need {
     visibility: hidden;
 }
 

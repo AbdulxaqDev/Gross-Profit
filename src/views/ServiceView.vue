@@ -1,22 +1,33 @@
 <script>
 import ServiceService from "../components/ServiceService.vue";
 import HomeFooter from "../components/HomeFooter.vue";
-import OtherService from "../components/OtherService.vue";
 import Form from "../components/Form.vue";
+import HomeBottom from "../components/HomeBottom.vue";
+import OtherService from "../components/OtherService.vue";
 import { showForm } from '../stores/store'
 import { defineComponent } from "@vue/runtime-core";
-import {serviceData} from '../serviceData'
-import HomeBottom from "../components/HomeBottom.vue";
+import { serviceData } from '../serviceData'
 
 
 
 export default defineComponent({
   components: {
     'ServiceService': ServiceService,
-    'HomeFooter': HomeFooter,
     'OtherService': OtherService,
+    'HomeFooter': HomeFooter,
     'Form': Form,
     'HomeBottom': HomeBottom,
+  },
+  methods: {
+    detailedSer() {
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+        },
   },
   data() {
     return {
@@ -28,15 +39,23 @@ export default defineComponent({
     this.showForm.showDetailedSer = false;
     this.showForm.index = '';
   },
+  mounted() {
+    this.detailedSer();
+  },
+  unmounted() {
+    window.onload = function () {
+      location.assign = "https://www.javascripttutorial.net/";
+    }
+  },
 });
 </script>
 
 <template>
   <div class="service" id="service">
     <p v-if="showForm.index === ''">Главная / <b>Услуги</b></p>
-    <p v-else>Главная / Услуги /<b>{{data[showForm.index].title}}</b></p>
+    <p v-else>Главная / Услуги /<b>{{ data[showForm.index].title }}</b></p>
     <ServiceService v-if="!showForm.showDetailedSer" />
-    <OtherService v-if="showForm.showDetailedSer" />
+    <!-- <OtherService v-if="showForm.showDetailedSer" /> -->
     <HomeFooter />
     <Form />
     <HomeBottom />

@@ -1,9 +1,15 @@
 <script>
+
+import { RouterLink, RouterView } from "vue-router";
+
+
+
 export default {
     props: [
         'title',
         'description',
         'imageUrl',
+        'serviceLink',
     ]
 };
 </script>
@@ -13,7 +19,7 @@ export default {
         <h3>{{ title }}</h3>
         <p>{{ description }}</p>
         <div class="image" >
-            <button>Подробнее</button>
+            <RouterLink :to="serviceLink"><button>Подробнее</button></RouterLink>
             <img :src="imageUrl" alt="Services">
         </div>
 
@@ -84,21 +90,26 @@ button {
     background: #FFFFFF;
     border: 1px solid #182061;
     border-radius: 25px 1px;
-
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
     text-align: center;
     letter-spacing: 0.05em;
+}
+
+button a{
     color: #182061;
+    text-decoration: none;
 }
 
 button:hover {
-    color: #fff;
     background: #182061;
     transition: 0.3s;
     cursor: pointer;
+}
+button:hover{
+    color: #fff;
 }
 
 @media (max-width: 1225px) {
